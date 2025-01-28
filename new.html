@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechInnovation Pro</title>
+    <style>
+        :root {
+            --primary-color: #007AFF;
+            --background-color: #F2F2F7;
+            --text-color: #1D1D1F;
+            --secondary-color: #5E5CE6;
+            --card-bg: #FFFFFF;
+        
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scrollbar-width: none;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overscroll-behavior-x: none;
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            z-index: 50;
+            color: white;
+            transition: background 0.3s;
+        }
+        .header.scrolled {
+            background: rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        .actions {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .desktop-navigation {
+            display: flex;
+            gap: 20px;
+        }
+        .desktop-navigation a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .desktop-navigation a:hover {
+            color: var(--primary-color);
+        }
+        .download {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: transform 0.2s, background 0.2s;
+        }
+        .download:hover {
+            transform: scale(1.05);
+            background: #0056b3;
+        }
+        .menu-toggle {
+            display: none;
+            position: relative;
+            width: 30px;
+            height: 20px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        .menu-icon {
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background: white;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all 0.3s;
+        }
+        .menu-icon::before, .menu-icon::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background: white;
+            transition: all 0.3s;
+        }
+        .menu-icon::before { top: -10px; }
+        .menu-icon::after { bottom: -10px; }
+        .menu-toggle.active .menu-icon {
+            transform: rotate(45deg);
+        }
+        .menu-toggle.active .menu-icon::before {
+            top: 0;
+            transform: rotate(90deg);
+        }
+        .menu-toggle.active .menu-icon::after {
+            bottom: 0;
+            transform: rotate(-90deg);
+        }
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 40;
+        }
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .nav-dot.active {
+            background: white;
+            width: 20px;
+            border-radius: 10px;
+        }
+        .swiper-container {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .swiper-wrapper {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .swiper-slide {
+            min-width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .slide-content {
+            text-align: center;
+            max-width: 800px;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        .slide-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .slide-description {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 30px;
+        }
+        .slide-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            filter: brightness(0.6);
+        }
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .menu-content {
+            text-align: center;
+            color: white;
+        }
+        .menu-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 2.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 101;
+        }
+        .menu-item {
+            display: block;
+            margin: 20px 0;
+            color: white;
+            text-decoration: none;
+            font-size: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        .menu-item::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+        .menu-item:hover::after {
+            left: 0;
+            width: 100%;
+        }
+        .menu-item:hover {
+            color: var(--primary-color);
+            transform: translateX(10px);
+        }
+        .menu-download {
+            margin-top: 30px;
+            width: auto;
+            display: none;
+        }
+        .menu-overlay.active .menu-item {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .menu-item:nth-child(1) { transition-delay: 0.1s; }
+        .menu-item:nth-child(2) { transition-delay: 0.2s; }
+        .menu-item:nth-child(3) { transition-delay: 0.3s; }
+        .menu-item:nth-child(4) { transition-delay: 0.4s; }
+        .menu-item:nth-child(5) { transition-delay: 0.5s; }
+
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        .app-features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .feature-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            width: 300px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+        }
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        .swiper-reviews {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .review-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: left;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            width: 350px;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .review-text {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        .review-author {
+            display: flex;
+            align-items: center;
+        }
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        .developers {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .developer-card {
+            text-align: center;
+            width: 250px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .developer-card:hover {
+            transform: scale(1.05);
+        }
+        .developer-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        .contact-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 20px;
+        }
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .contact-form input, 
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 10px;
+        }
+        .submit-btn {
+            background-color: white;
+            color: var(--primary-color);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+        .submit-btn:hover {
+            transform: scale(1.05);
+        }
+
+
+        @media (max-width: 1024px) {
+            .desktop-navigation {
+                display: none;
+            }
+            .header .actions:not(.mobile-menu) {
+                display: none;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .menu-download {
+                display: block;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .header {
+                padding: 20px 50px;
+            }
+            .actions .mobile-menu {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .slide-title { font-size: 1.8rem; }
+            .slide-description { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">wedday</div>
+        <nav class="desktop-navigation">
+            <a href="#home">Bosh sahifa</a>
+            <a href="#features">Xususiyatlar</a>
+            <a href="#tech-details">Texnik ma'lumotlar</a>
+            <a href="#help">Yordam</a>
+            <a href="#contact">Aloqa</a>
+            <a href="#install">weddayni yuklab olish</a>
+        </nav>
+
+        <div class="actions mobile-menu">
+            <button class="menu-toggle" id="menuToggle">
+                <div class="menu-icon"></div>
+            </button>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="menu-close" id="menuClose">&times;</button>
+        <div class="menu-content">
+            <a href="#home" class="menu-item">Bosh sahifa</a>
+            <a href="#features" class="menu-item">Xususiyatlar</a>
+            <a href="#tech-details" class="menu-item">Texnik ma'lumotlar</a>
+            <a href="#help" class="menu-item">Yordam</a>
+            <a href="#contact" class="menu-item">Aloqa</a>
+            <a href="#install" class="menu-item">wedday</a>
+        </div>
+    </div>
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="/Frame 1321315062.png" alt="Slide 1" class="slide-image">
+                <div class="slide-content">
+                    <h2 class="slide-title">Eng Zamonaviy Texnologiya</h2>
+                    <p class="slide-description">Innovatsion yechimlar va eng yuqori sifatli dizayn</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="/Frame 1321315063.png" alt="Slide 2" class="slide-image">
+                <div class="slide-content">
+                    <h2 class="slide-title">Qulay va Tez Interfejs</h2>
+                    <p class="slide-description">Foydalanish uchun eng optimal yechimlar</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="/Frame 1321315064.png" alt="Slide 3" class="slide-image">
+                <div class="slide-content">
+                    <h2 class="slide-title">Global Standartlar</h2>
+                    <p class="slide-description">Jahon darajasidagi texnologiya va dizayn</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="/Frame 1321315065.png" alt="Slide 4" class="slide-image">
+                <div class="slide-content">
+                    <h2 class="slide-title">Innovatsion Yechimlar</h2>
+                    <p class="slide-description">Texnologiyalarning eng so'nggi trend va imkoniyatlari</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="/Frame 1321315066.png" alt="Slide 5" class="slide-image">
+                <div class="slide-content">
+                    <h2 class="slide-title">Mukammal Dizayn</h2>
+                    <p class="slide-description">Estetika va funktsionallikning ideal uyg'unligi</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <div class="nav-dot active" data-slide="0"></div>
+        <div class="nav-dot" data-slide="1"></div>
+        <div class="nav-dot" data-slide="2"></div>
+        <div class="nav-dot" data-slide="3"></div>
+        <div class="nav-dot" data-slide="4"></div>
+    </div>
+
+    <div id="features" class="section">
+        <h2 class="section-title">Ilova Xususiyatlari</h2>
+        <div class="app-features">
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3>Tezkor Ishlash</h3>
+                <p>Eng optimal texnologiyalar bilan tezkor va samarali ishlaydigan ilova</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Xavfsizlik</h3>
+                <p>Eng zamonaviy xavfsizlik standartlari bilan ta'minlangan ilova</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Qulay Interfeys</h3>
+                <p>Intuitiv va foydalanish uchun qulay dizayn</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="developers" class="section">
+        <h2 class="section-title">Ilova Dasturchilari</h2>
+        <div class="developers">
+            <div class="developer-card">
+                <img src="/Screenshot 2025-01-21 at 22.43.00.png" alt="" class="developer-avatar">SD</img>
+                <h3>Bobur Raimov</h3>
+                <p>Bosh Dasturchi</p>
+            </div>
+            <div class="developer-card">
+                <img src="/Screenshot 2025-01-21 at 22.43.00.png" alt="" class="developer-avatar">SD</img>
+                <h3>Aziza Maxmudova</h3>
+                <p>Frontend Dasturchisi</p>
+            </div>
+            <div class="developer-card">
+                <img src="/Screenshot 2025-01-21 at 22.43.00.png" alt="" class="developer-avatar">SD</img>
+                <h3>Sardor Doniyorov</h3>
+                <p>Backend Dasturchisi</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact" class="contact-section">
+        <h2 class="section-title" style="color: white;">Biz Bilan Bog'lanish</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Ismingiz" required>
+            <input type="email" placeholder="Elektron pochta" required>
+            <textarea placeholder="Xabaringiz" rows="5" required></textarea>
+            <button type="submit" class="submit-btn">Xabarni Yuborish</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        const slides = document.querySelectorAll('.swiper-slide');
+        const dots = document.querySelectorAll('.nav-dot');
+        const container = document.querySelector('.swiper-container');
+        const wrapper = document.querySelector('.swiper-wrapper');
+        const header = document.querySelector('.header');
+        let currentSlide = 0;
+
+        function downloadApp() {
+            alert('Ilovani yuklab olish jarayoni boshlandi!');
+            // You can replace this with actual download logic
+        }
+
+        function changeSlide(index) {
+            wrapper.style.transform = `translateX(-${index * 100}%)`;
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+            currentSlide = index;
+        }
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                changeSlide(parseInt(dot.dataset.slide));
+            });
+        });
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        container.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        container.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX && currentSlide < slides.length - 1) {
+                changeSlide(currentSlide + 1);
+            }
+            if (touchEndX > touchStartX && currentSlide > 0) {
+                changeSlide(currentSlide - 1);
+            }
+        }
+
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            changeSlide(currentSlide);
+        }, 5000);
+
+        const menuToggle = document.getElementById('menuToggle');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const menuClose = document.getElementById('menuClose');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+        });
+
+        menuClose.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            menuOverlay.classList.remove('active');
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
