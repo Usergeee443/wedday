@@ -350,16 +350,29 @@
         // Menu
         const menuToggle = document.getElementById("menu-toggle");
         const menu = document.getElementById("menu");
-
+        
         menuToggle.addEventListener("click", () => {
-            // Menyu ochish va yashirish
+            // Menyuni ochish/yopish
             menu.classList.toggle("hidden");
-
-            // Vibratsiya (agar bu imkoniyat bo'lsa, mobil qurilmada ishlaydi)
-            if (navigator.vibrate) {
-                navigator.vibrate(100); // 100 millisekundlik titrash
-            }
+        
+            // Vibratsiyani ishga tushirish
+            handleVibration();
         });
+        
+        // Vibratsiya funktsiyasi
+        function handleVibration() {
+            // Brauzer vibratsiyani qo'llab-quvvatlasa
+            if (navigator.vibrate) {
+                try {
+                    // Vibratsiyani boshlash (200ms)
+                    navigator.vibrate(200);
+                } catch (error) {
+                    console.error("Vibratsiyada xatolik:", error);
+                }
+            } else {
+                console.log("Brauzer vibratsiyani qo'llab-quvvatlamaydi");
+            }
+        }
     </script>
 </body>
 
