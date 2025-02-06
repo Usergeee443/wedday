@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+    <title>Innovatsion Texnologiyalar</title>
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating-element { animation: float 4s ease-in-out infinite; }
+        .hover-scale { transition: transform 0.3s ease; }
+        .hover-scale:hover { transform: scale(1.05); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+    <!-- Minimalist Navbar -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-600">Innovate</div>
+            <div class="space-x-4">
+                <a href="#mission" class="text-gray-700 hover:text-blue-600 transition">Missiya</a>
+                <a href="#team" class="text-gray-700 hover:text-blue-600 transition">Jamoa</a>
+                <a href="#contact" class="text-white bg-blue-600 px-4 py-2 rounded-full hover:bg-blue-700 transition">Aloqa</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="min-h-screen flex items-center justify-center text-center bg-gradient-to-br from-blue-500 to-purple-600 text-white pt-16">
+        <div class="container mx-auto px-4">
+            <h1 class="text-5xl font-bold mb-6 animate-fade-in">Innovatsion Yechimlar</h1>
+            <p class="max-w-2xl mx-auto text-xl mb-10 opacity-80">
+                Texnologiya va innovatsiyalar orqali kelajakni shakllantiramiz
+            </p>
+            <div class="space-x-4">
+                <a href="#mission" class="px-8 py-3 bg-white text-blue-600 rounded-full hover:bg-blue-50 transition">Batafsil</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mission Section -->
+    <section id="mission" class="py-20 container mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <h2 class="text-4xl font-bold text-gray-800">Bizning Maqsad</h2>
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-500">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-600">Innovatsiya</h3>
+                    <p class="text-gray-600">
+                        Har bir loyihamiz bilan texnologiyalarni insoniyat foydasiga yoqamiz, yangi imkoniyatlar yaratamiz.
+                    </p>
+                </div>
+            </div>
+            <div class="hover-scale floating-element">
+                <img src="/api/placeholder/500/500" alt="Mission Illustration" class="rounded-2xl shadow-lg"/>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">Bizning Jamoa</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-100 rounded-2xl overflow-hidden shadow-md hover-scale">
+                    <img src="/api/placeholder/400/400" alt="Team Member" class="w-full"/>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2">Ulug'bek Karimov</h3>
+                        <p class="text-gray-600">Bosh Direktor</p>
+                    </div>
+                </div>
+                <div class="bg-gray-100 rounded-2xl overflow-hidden shadow-md hover-scale">
+                    <img src="/api/placeholder/400/400" alt="Team Member" class="w-full"/>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2">Dilroz Alimova</h3>
+                        <p class="text-gray-600">Texnologiya Direktori</p>
+                    </div>
+                </div>
+                <div class="bg-gray-100 rounded-2xl overflow-hidden shadow-md hover-scale">
+                    <img src="/api/placeholder/400/400" alt="Team Member" class="w-full"/>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2">Aziz Rahmonov</h3>
+                        <p class="text-gray-600">Loyihalar Boshqaruvchisi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+        <div class="container mx-auto px-4 max-w-xl">
+            <h2 class="text-4xl font-bold text-center mb-12">Biz Bilan Bog'laning</h2>
+            <form class="space-y-6 bg-white/10 backdrop-blur-lg p-8 rounded-2xl">
+                <input type="text" placeholder="Ismingiz" class="w-full p-4 bg-white/20 rounded-lg text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+                <input type="email" placeholder="Elektron pochta" class="w-full p-4 bg-white/20 rounded-lg text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+                <textarea placeholder="Xabaringiz" rows="4" class="w-full p-4 bg-white/20 rounded-lg text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
+                <button class="w-full py-4 bg-white text-blue-600 rounded-lg hover:bg-blue-50 transition">Yuborish</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 Innovatsion Texnologiyalar. Barcha huquqlar himoyalangan.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="text-gray-400 hover:text-white">Maxfiylik Siyosati</a>
+                <a href="#" class="text-gray-400 hover:text-white">Foydalanish Shartlari</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

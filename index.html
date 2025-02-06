@@ -4,375 +4,1096 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedday - Support va Asosiy Sayt</title>
+    <title>Mobile Ilova</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+
+    <link href="https://fonts.cdnfonts.com/css/gold-shine-2" rel="stylesheet">
+
+    <link href="https://cdnfonts.com/css/playfair-display" rel="stylesheet">
+
+    <link href="https://cdnfonts.com/css/lora" rel="stylesheet">
+
+    <link href="https://fonts.cdnfonts.com/css/mareline-script" rel="stylesheet">
+
+    <link href="https://fonts.cdnfonts.com/css/tiny-pixy" rel="stylesheet">
+
+
+
+
+
+
+
+
+
     <style>
-        html,
-        body {
-            overflow: hidden;
-            margin: 0;
-            padding: 0;
+        .font-gold {
+            font-family: 'Gold Shine', sans-serif;
         }
 
-        #sections-container {
-            height: 100vh;
-            position: relative;
-            overflow: hidden;
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
         }
 
-        .section {
-            position: absolute;
-            width: 100%;
-            height: 100vh;
-            left: 0;
-            transition: transform 0.5s ease;
+        .font-lora {
+            font-family: 'Lora', serif;
         }
 
-        .download-button {
-            transition: transform 0.2s ease;
+        .font-mareline {
+            font-family: 'Mareline Script', sans-serif;
         }
 
-        .download-button:hover {
-            transform: scale(1.05);
+        .font-sf {
+            font-family: 'Tiny Pixy', sans-serif;
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        @media (max-width: 640px) {
+            .responsive-flex {
+                flex-direction: column;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
         }
     </style>
 </head>
 
-<body>
+<body class="font-sans bg-white">
+    <!-- Header -->
+    <header class="fixed w-full bg-white bg-opacity-80 backdrop-blur-lg border-b z-50 shadow-lg">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="text-black text-2xl font-bold">
+                    Logo
+                </div>
 
-    <nav class="fixed w-full z-50 bg-white/30 backdrop-blur-md">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="#" class="flex items-center space-x-3">
-                <span class="self-center text-2xl font-semibold">Wedday</span>
-            </a>
-    
-            <!-- Mobil menyu uchun toggle -->
-            <button id="menu-toggle" class="md:hidden text-2xl focus:outline-none">
-                ☰
-            </button>
-    
-            <!-- Menyu (mobilda faqat toggle tugmasi orqali ochiladi, desktopda doimiy ko'rinadi) -->
-            <div id="menu" class="hidden w-full md:flex md:w-auto">
-                <ul class="font-medium flex flex-col md:flex-row p-4 md:p-0 mt-4 md:space-x-8 md:mt-0">
-                    <li><a href="#" class="block py-2 px-3 hover:text-blue-600 transition-colors">Biz haqimizda</a></li>
-                    <li><a href="#" class="block py-2 px-3 hover:text-blue-600 transition-colors">Wedday Chat</a></li>
-                    <li><a href="#" class="block py-2 px-3 hover:text-blue-600 transition-colors">Yangiliklar</a></li>
-                    <li><a href="#" class="block py-2 px-3 hover:text-blue-600 transition-colors">Ilovani yuklab olish</a></li>
-                </ul>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="/about.html" class="text-gray-800 hover:text-black transition duration-300">Biz haqimizda</a>
+                    <a href="#download" class="text-gray-800 hover:text-black transition duration-300">Yuklab olish</a>
+                    <a href="#contact" class="text-gray-800 hover:text-black transition duration-300">Aloqa</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" class="md:hidden text-black">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
             </div>
-        </div>
-    </nav>
 
-    <div id="sections-container">
-        <!-- Hero Section -->
-        <section class="section bg-gradient-to-r from-blue-500 to-purple-600">
-            <div class="h-full flex items-center justify-center">
-                <div class="text-center text-white px-4">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Wedday bilan osonroq</h1>
-                    <p class="text-xl md:text-2xl">To'ylaringizni rejalashtirish endi yanada qulay</p>
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="#features" class="text-gray-800 hover:text-black transition duration-300">Xususiyatlar</a>
+                    <a href="#download" class="text-gray-800 hover:text-black transition duration-300">Yuklab olish</a>
+                    <a href="#contact" class="text-gray-800 hover:text-black transition duration-300">Aloqa</a>
                 </div>
             </div>
-        </section>
+        </nav>
+    </header>
 
-        <!-- Section 1: To'y Rejalashtirish -->
-        <section class="section bg-white">
-            <div class="h-full flex items-center justify-between px-4 md:px-20">
-                <div class="w-1/2">
-                    <img src="/api/placeholder/400/600" alt="To'y rejalashtirish" class="rounded-lg shadow-xl" />
-                </div>
-                <div class="w-1/2 pl-8">
-                    <h2 class="text-3xl font-bold mb-4">To'y rejalashtirish</h2>
-                    <p class="text-lg mb-6">Oson va qulay interfeys orqali to'yingizni rejalashtiring. Barcha detallarni
-                        bir joyda nazorat qiling.</p>
-                    <ul class="space-y-4 text-lg">
-                        <li class="flex items-center">
-                            <svg class="w-6 h-6 mr-2 text-green-500" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            To'y kunini belgilash va rejalashtirish
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-6 h-6 mr-2 text-green-500" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            Byudjetni nazorat qilish
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+    <!-- Animated Text Section -->
+    <section class="w-full h-screen flex items-center justify-center bg-[#ffffff]">
+        <div id="changingText"
+            class="text-4xl md:text-6xl lg:text-7xl text-center text-black px-6 transition-all ease-in-out"></div>
+    </section>
 
-        <!-- Section 2: Xizmatlar -->
-        <section class="section bg-gray-50">
-            <div class="h-full flex items-center justify-between px-4 md:px-20">
-                <div class="w-1/2">
-                    <img src="/api/placeholder/400/600" alt="Xizmatlar katalogi" class="rounded-lg shadow-xl" />
-                </div>
-                <div class="w-1/2 pl-8">
-                    <h2 class="text-3xl font-bold mb-4">Xizmatlar katalogi</h2>
-                    <p class="text-lg mb-6">Professional to'y xizmatlari va mahsulotlarini bir joydan toping.</p>
-                    <ul class="space-y-4 text-lg">
-                        <li class="flex items-center">
-                            <svg class="w-6 h-6 mr-2 text-blue-500" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            To'y liboslari va bezaklar
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-6 h-6 mr-2 text-blue-500" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            Foto va video xizmatlar
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+    <section class="py-8 md:py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-gray-800">
+                Ilova ko'rinishi
+            </h2>
 
-        <!-- Section 3: Mehmonlar -->
-        <section class="section bg-white">
-            <div class="h-full flex items-center justify-between px-4 md:px-20">
-                <div class="w-1/2">
-                    <img src="/api/placeholder/400/600" alt="Mehmonlar ro'yxati" class="rounded-lg shadow-xl" />
-                </div>
-                <div class="w-1/2 pl-8">
-                    <h2 class="text-3xl font-bold mb-4">Mehmonlar ro'yxati</h2>
-                    <p class="text-lg mb-6">Mehmonlar ro'yxatini oson boshqaring va nazorat qiling.</p>
-                    <ul class="space-y-4 text-lg">
-                        <li class="flex items-center">
-                            <svg class="w-6 h-6 mr-2 text-purple-500" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            Avtomatik mehmonlar ro'yxati
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-6 h-6 mr-2 text-purple-500" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            Stol rejasi va joylashtirishni rejalashtirish
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+            <div class="relative">
 
-        <!-- Section 4: Byudjet -->
-        <section class="section bg-gray-50">
-            <div class="h-full flex items-center justify-between px-4 md:px-20">
-                <div class="w-1/2">
-                    <img src="/api/placeholder/400/600" alt="Byudjet" class="rounded-lg shadow-xl" />
-                </div>
-                <div class="w-1/2 pl-8">
-                    <h2 class="text-3xl font-bold mb-4">Byudjet nazorati</h2>
-                    <p class="text-lg mb-6">To'y xarajatlarini oson nazorat qiling va rejalashtiring.</p>
-                    <ul class="space-y-4 text-lg">
-                        <li class="flex items-center">
-                            <svg class="w-6 h-6 mr-2 text-yellow-500" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            Xarajatlar hisobi
-                        </li>
-                        <li class="flex items-center">
-                            <svg class="w-6 h-6 mr-2 text-yellow-500" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            Byudjet tahlili
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 5: Download -->
-        <section class="section bg-gradient-to-r from-blue-600 to-purple-600">
-            <div class="h-full flex items-center justify-center px-4">
-                <div class="text-center text-white">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-8">Ilovani yuklab oling</h2>
-                    <div class="flex flex-col items-center space-y-8">
-                        <img src="/api/placeholder/200/200" alt="QR Code" class="bg-white p-4 rounded-lg shadow-lg" />
-                        <div class="flex flex-wrap justify-center gap-4">
-                            <a href="#"
-                                class="download-button bg-black text-white px-8 py-4 rounded-xl flex items-center space-x-2">
-                                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
-                                </svg>
-                                <div class="text-left">
-                                    <div class="text-xs">Download on the</div>
-                                    <div class="text-xl font-semibold">App Store</div>
-                                </div>
-                            </a>
-                            <a href="#"
-                                class="download-button bg-black text-white px-8 py-4 rounded-xl flex items-center space-x-2">
-                                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M3 20.5V3.5C3 2.91 3.34 2.39 3.84 2.15L13.69 12L3.84 21.85C3.34 21.6 3 21.09 3 20.5ZM16.81 15.12L6.05 21.34L14.54 12.85L16.81 15.12ZM20.16 12.86C20.5 13.07 20.75 13.42 20.75 13.86C20.75 14.3 20.5 14.65 20.16 14.86L17.07 16.64L14.54 14.11L19.07 9.58L20.16 12.86ZM6.05 2.66L16.81 8.88L14.54 11.15L6.05 2.66Z" />
-                                </svg>
-                                <div class="text-left">
-                                    <div class="text-xs">GET IT ON</div>
-                                    <div class="text-xl font-semibold">Google Play</div>
-                                </div>
-                            </a>
+                <!-- Gallery Container -->
+                <div id="gallery"
+                    class="flex space-x-2 md:space-x-2 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4">
+                    <div class="flex-none w-72 md:w-80 snap-center">
+                        <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition">
+                            <img src="/Frame 1321315062.png" alt="Screenshot 1"
+                                class="rounded-xl w-full h-auto hover:opacity-90 transition" />
                         </div>
                     </div>
+                    <div class="flex-none w-72 md:w-80 snap-center">
+                        <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition">
+                            <img src="/Frame 1321315063.png" alt="Screenshot 2"
+                                class="rounded-xl w-full h-auto hover:opacity-90 transition" />
+                        </div>
+                    </div>
+                    <div class="flex-none w-72 md:w-80 snap-center">
+                        <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition">
+                            <img src="/Frame 1321315064.png" alt="Screenshot 3"
+                                class="rounded-xl w-full h-auto hover:opacity-90 transition" />
+                        </div>
+                    </div>
+                    <div class="flex-none w-72 md:w-80 snap-center">
+                        <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition">
+                            <img src="/Frame 1321315065.png" alt="Screenshot 5"
+                                class="rounded-xl w-full h-auto hover:opacity-90 transition" />
+                        </div>
+                    </div>
+                    <div class="flex-none w-72 md:w-80 snap-center">
+                        <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition">
+                            <img src="/Frame 1321315066.png" alt="Screenshot 6"
+                                class="rounded-xl w-full h-auto hover:opacity-90 transition" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container mx-auto px-4 max-w-7xl">
+        <section class="bg-white shadow-2xl rounded-2xl p-8 mb-12 transform transition hover:scale-[1.02]">
+            <h2 class="text-3xl font-bold text-center mb-8">WeDay Nima?</h2>
+            <div class="grid md:grid-cols-2 gap-8 responsive-flex">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">📱 Ilovaning Mohiyati</h3>
+                    <p class="text-gray-700 leading-relaxed">WeDay innovatsion hamkorlik platformasi bo'lib, yaratuvchilar va foydalanuvchilar o'rtasida o'zaro foydali aloqalar o'rnatishga yordam beradi. Platforma kontentni yaratish, tarqatish va monetizatsiya qilishning yangi, samarali modelini taqdim etadi.</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">👥 Kimlar Uchun</h3>
+                    <ul class="text-gray-700 space-y-2">
+                        <li class="flex items-center">
+                            <iconify-icon icon="carbon:user-avatar" class="mr-2 text-blue-500"></iconify-icon>
+                            Kontent yaratuvchilar
+                        </li>
+                        <li class="flex items-center">
+                            <iconify-icon icon="carbon:rocket" class="mr-2 text-green-500"></iconify-icon>
+                            Startap asoslanchilari
+                        </li>
+                        <li class="flex items-center">
+                            <iconify-icon icon="carbon:laptop" class="mr-2 text-purple-500"></iconify-icon>
+                            Freelancerlar
+                        </li>
+                        <li class="flex items-center">
+                            <iconify-icon icon="carbon:idea" class="mr-2 text-orange-500"></iconify-icon>
+                            Biznes va innovatsiya qiziqishiga ega shaxslar
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Yaratuvchilar Uchun Imkoniyatlar -->
+        <section class="bg-blue-50 py-16 rounded-2xl">
+            <h2 class="text-3xl font-bold text-center mb-12">Elon Yaratuvchilari Uchun Imkoniyatlar</h2>
+            <div class="grid md:grid-cols-3 gap-8 responsive-flex">
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:scale-105">
+                    <iconify-icon icon="carbon:rocket" class="text-5xl text-blue-600 mb-4"></iconify-icon>
+                    <h3 class="text-xl font-bold mb-3">Monetizatsiya</h3>
+                    <p class="text-gray-700">Kontentdan to'g'ridan-to'g'ri daromad olish va auditoriya bilan o'zaro foydali munosabatlar o'rnatish</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:scale-105">
+                    <iconify-icon icon="carbon:network-3" class="text-5xl text-green-600 mb-4"></iconify-icon>
+                    <h3 class="text-xl font-bold mb-3">Hamkorlik</h3>
+                    <p class="text-gray-700">Boshqa yaratuvchilar va brendlar bilan keng imkoniyatlar va loyihalar</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:scale-105">
+                    <iconify-icon icon="carbon:analytics" class="text-5xl text-purple-600 mb-4"></iconify-icon>
+                    <h3 class="text-xl font-bold mb-3">Analitika</h3>
+                    <p class="text-gray-700">Kontentning samaradorligi va auditoriya xarakteri haqida batafsl ma'lumotlar</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Foydalanuvchilar Uchun Imkoniyatlar -->
+        <section class="bg-green-50 py-16 rounded-2xl mt-12">
+            <h2 class="text-3xl font-bold text-center mb-12">Foydalanuvchilar Uchun Qulayliklar</h2>
+            <div class="grid md:grid-cols-3 gap-8 responsive-flex">
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:scale-105">
+                    <iconify-icon icon="carbon:user-follow" class="text-5xl text-indigo-600 mb-4"></iconify-icon>
+                    <h3 class="text-xl font-bold mb-3">Maxsus Kontentga Kirish</h3>
+                    <p class="text-gray-700">Innovatsion va noyob loyihalar, tadbirlar va o'quv materiallarga bo'lgan kirish</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:scale-105">
+                    <iconify-icon icon="carbon:collaborate" class="text-5xl text-teal-600 mb-4"></iconify-icon>
+                    <h3 class="text-xl font-bold mb-3">Interaktiv Hamjamiyat</h3>
+                    <p class="text-gray-700">Qiziqarli hamjamiyat va professional tarmoqlar bilan bog'lanish</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:scale-105">
+                    <iconify-icon icon="carbon:trophy" class="text-5xl text-orange-600 mb-4"></iconify-icon>
+                    <h3 class="text-xl font-bold mb-3">Rivojlanish Imkoniyati</h3>
+                    <p class="text-gray-700">Yangi ko'nikma va bilimlarni o'rganish uchun professional platforma</p>
                 </div>
             </div>
         </section>
     </div>
 
+    <!-- 5. Statistics Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                <div class="group p-6 rounded-2xl bg-gray-50 hover:bg-gray-100 transition-all duration-300">
+                    <div data-target="10000"
+                        class="counter text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                        10k+</div>
+                    <div class="text-gray-600 mt-2 text-sm md:text-base font-medium">Yuklab olishlar</div>
+                </div>
+
+                <div class="group p-6 rounded-2xl bg-gray-50 hover:bg-gray-100 transition-all duration-300">
+                    <div data-target="4.8"
+                        class="counter text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">
+                        4.8</div>
+                    <div class="text-gray-600 mt-2 text-sm md:text-base font-medium">O'rtacha reyting</div>
+                </div>
+
+                <div class="group p-6 rounded-2xl bg-gray-50 hover:bg-gray-100 transition-all duration-300">
+                    <div data-target="1000"
+                        class="counter text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                        1000+</div>
+                    <div class="text-gray-600 mt-2 text-sm md:text-base font-medium">Elonlar</div>
+                </div>
+
+                <div class="group p-6 rounded-2xl bg-gray-50 hover:bg-gray-100 transition-all duration-300">
+                    <div
+                        class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+                        24/7</div>
+                    <div class="text-gray-600 mt-2 text-sm md:text-base font-medium">Qo'llab-quvvatlash</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Testimonials Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold text-center mb-12">Foydalanuvchilar fikri</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
+                        <div>
+                            <h3 class="font-bold">Aziz Karimov</h3>
+                            <div class="text-yellow-400">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Ajoyib ilova! Kundalik ishlarimni ancha yengillashtirdi."</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
+                        <div>
+                            <h3 class="font-bold">Malika Saidova</h3>
+                            <div class="text-yellow-400">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Foydalanish juda qulay, interfeysi sodda va chiroyli."</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
+                        <div>
+                            <h3 class="font-bold">Jamshid Rahimov</h3>
+                            <div class="text-yellow-400">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Tez ishlaydi va juda ko'p foydali funksiyalari bor."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- 8. Blog Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold text-center mb-12">So'nggi yangiliklar</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg overflow-hidden shadow-sm">
+                    <img src="/2025-01-22 16.08.08.jpg" alt="Blog" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="font-bold mb-2">Yangi versiya chiqdi</h3>
+                        <p class="text-gray-600 mb-4">Yangi funksiyalar va yaxshilanishlar bilan tanishing</p>
+                        <a href="#" class="text-black font-bold hover:underline">Batafsil →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="max-w-md mx-auto p-4 mt-10">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold text-center">Tarfilar imkoniyatlari</h2>
+            <p class="text-sm text-gray-500 text-center mb-12">Tarfilar imkoniyatlari</p>
+        </div>
+        <div class="bg-white rounded-xl p-4 shadow-xl mb-4">
+            <div class="flex flex-col gap-4" id="plan-selector">
+                <div class="flex items-center justify-between p-3 border rounded-lg cursor-pointer" data-plan="basic"
+                    onclick="selectPlan('basic')">
+                    <div class="flex items-center gap-3">
+                        <div class="w-5 h-5 rounded-full border-2 flex items-center justify-center" id="basic-radio">
+                            <div class="w-3 h-3 bg-blue-600 rounded-full hidden"></div>
+                        </div>
+                        <span class="text-lg font-medium">Basic</span>
+                    </div>
+                    <span class="text-lg">Bepul</span>
+                </div>
+                <div class="flex items-center justify-between p-3 border rounded-lg cursor-pointer" data-plan="premium"
+                    onclick="selectPlan('premium')">
+                    <div class="flex items-center gap-3">
+                        <div class="w-5 h-5 rounded-full border-2 flex items-center justify-center" id="premium-radio">
+                            <div class="w-3 h-3 bg-blue-600 rounded-full hidden"></div>
+                        </div>
+                        <span class="text-lg font-medium text-orange-500">Premium</span>
+                    </div>
+                    <span class="text-lg text-orange-500">39 990 so'm</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-sm text-gray-500 mb-4 ml-[5px]">
+            PREMIUM REJANI TANLAB, SIZ QUYIDAGI IMKONIYATLARGA EGA BO'LASIZ:
+        </div>
+
+        <div id="features-list" class="space-y-3">
+            <div class="bg-gray-50 p-4 rounded-[1rem] feature-item">
+                <div class="flex items-center justify-between group cursor-pointer" onclick="toggleFeatureInfo(this)">
+                    <div class="flex items-center gap-3">
+                        <div class="w-6 h-6 text-purple-600 feature-icon">📈</div>
+                        <div>
+                            <div class="font-medium feature-title">Qidiruvda yuqori natijalar!</div>
+                            <div class="text-sm text-gray-500 feature-description">Qidiruvda yuqori o'rinlarda
+                                ko'rinasiz</div>
+                            <div class="hidden text-xs text-gray-400 mt-2 feature-info">
+                                Premium tarif orqali siz qidiruv natijalarida eng yuqori o'rinlarda joy olasiz
+                            </div>
+                        </div>
+                    </div>
+                    <span class="text-xs text-orange-600 bg-orange-100 px-2 py-1 rounded feature-badge">Premium</span>
+                </div>
+            </div>
+            <!-- Add more features similarly -->
+            <div class="bg-gray-50 p-4 rounded-[1rem] feature-item">
+                <div class="flex items-center justify-between group cursor-pointer" onclick="toggleFeatureInfo(this)">
+                    <div class="flex items-center gap-3">
+                        <div class="w-6 h-6 text-purple-600 feature-icon">🌐</div>
+                        <div>
+                            <div class="font-medium feature-title">Websaytni qoshish mumkun!</div>
+                            <div class="text-sm text-gray-500 feature-description">Saytingizga havola qo'shish imkoniyati.</div>
+                            <div class="hidden text-xs text-gray-400 mt-2 feature-info">
+                                Har bir e'lonizga 5 tagacha sifatli rasm qo'shish imkoniyati
+                            </div>
+                        </div>
+                    </div>
+                    <span class="text-xs text-orange-600 bg-orange-100 px-2 py-1 rounded feature-badge">Premium</span>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-4 rounded-[1rem] feature-item">
+                <div class="flex items-center justify-between group cursor-pointer" onclick="toggleFeatureInfo(this)">
+                    <div class="flex items-center gap-3">
+                        <div class="w-6 h-6 text-purple-600 feature-icon">🔥</div>
+                        <div>
+                            <div class="font-medium feature-title">4ta gach ijtimoiy tarmoq!</div>
+                            <div class="text-sm text-gray-500 feature-description">4 ta ijtimoiy tarmoqni bog'lash.</div>
+                            <div class="hidden text-xs text-gray-400 mt-2 feature-info">
+                                Har bir e'lonizga 5 tagacha sifatli rasm qo'shish imkoniyati
+                            </div>
+                        </div>
+                    </div>
+                    <span class="text-xs text-orange-600 bg-orange-100 px-2 py-1 rounded feature-badge">Premium</span>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-4 rounded-[1rem] feature-item">
+                <div class="flex items-center justify-between group cursor-pointer" onclick="toggleFeatureInfo(this)">
+                    <div class="flex items-center gap-3">
+                        <div class="w-6 h-6 text-purple-600 feature-icon">📖</div>
+                        <div>
+                            <div class="font-medium feature-title">Tafsifda 400ta gacha belgilar!</div>
+                            <div class="text-sm text-gray-500 feature-description">400 ta belgigacha matn qo'shing.</div>
+                            <div class="hidden text-xs text-gray-400 mt-2 feature-info">
+                                Har bir e'lonizga 5 tagacha sifatli rasm qo'shish imkoniyati
+                            </div>
+                        </div>
+                    </div>
+                    <span class="text-xs text-orange-600 bg-orange-100 px-2 py-1 rounded feature-badge">Premium</span>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-4 rounded-[1rem] feature-item">
+                <div class="flex items-center justify-between group cursor-pointer" onclick="toggleFeatureInfo(this)">
+                    <div class="flex items-center gap-3">
+                        <div class="w-6 h-6 text-purple-600 feature-icon">☎️</div>
+                        <div>
+                            <div class="font-medium feature-title">3ta telefon ragam</div>
+                            <div class="text-sm text-gray-500 feature-description">3 ta telefon raqam kiritish.</div>
+                            <div class="hidden text-xs text-gray-400 mt-2 feature-info">
+                                Har bir e'lonizga 5 tagacha sifatli rasm qo'shish imkoniyati
+                            </div>
+                        </div>
+                    </div>
+                    <span class="text-xs text-orange-600 bg-orange-100 px-2 py-1 rounded feature-badge">Premium</span>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-4 rounded-[1rem] feature-item">
+                <div class="flex items-center justify-between group cursor-pointer" onclick="toggleFeatureInfo(this)">
+                    <div class="flex items-center gap-3">
+                        <div class="w-6 h-6 text-purple-600 feature-icon">🖼️</div>
+                        <div>
+                            <div class="font-medium feature-title">5ta elon yaratish rasmi</div>
+                            <div class="text-sm text-gray-500 feature-description">5 ta rasm qo'shish imkoniyati</div>
+                            <div class="hidden text-xs text-gray-400 mt-2 feature-info">
+                                Har bir e'lonizga 5 tagacha sifatli rasm qo'shish imkoniyati
+                            </div>
+                        </div>
+                    </div>
+                    <span class="text-xs text-orange-600 bg-orange-100 px-2 py-1 rounded feature-badge">Premium</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- 17. Latest Updates -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold text-center mb-12">So'nggi yangilanishlar</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-8">
+                    <div class="flex items-start">
+                        <div
+                            class="flex-shrink-0 w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mr-4">
+                            <span class="text-xl font-bold">2.0</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold mb-2">Yangi interfeys</h3>
+                            <p class="text-gray-600">Yangilangan dizayn va qo'shimcha funksiyalar</p>
+                            <p class="text-sm text-gray-500 mt-2">10 Yanvar, 2025</p>
+                        </div>
+                    </div>
+                    <!-- Add more updates -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 18. Community -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold text-center mb-12">Jamiyat</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-sm">
+                    <h3 class="font-bold text-xl mb-4">Forum</h3>
+                    <p class="text-gray-600 mb-6">Boshqa foydalanuvchilar bilan tajriba almashing</p>
+                    <a href="#"
+                        class="inline-block px-6 py-3 border border-black text-black hover:bg-black hover:text-white transition rounded-lg">
+                        Forumga o'tish
+                    </a>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-sm">
+                    <h3 class="font-bold text-xl mb-4">Blog</h3>
+                    <p class="text-gray-600 mb-6">Eng so'nggi yangiliklar va maqolalarni o'qing</p>
+                    <a href="#"
+                        class="inline-block px-6 py-3 border border-black text-black hover:bg-black hover:text-white transition rounded-lg">
+                        Blogni ko'rish
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Statistika</h2>
+            <div class="dashboard-preview">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Foydalanuvchilar Statistikasi -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h4 class="font-bold mb-4 text-xl text-gray-800">Foydalanuvchilar</h4>
+                        <canvas id="userChart"></canvas>
+                    </div>
+
+                    <!-- Daromad Statistikasi -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h4 class="font-bold mb-4 text-xl text-gray-800">Daromad</h4>
+                        <canvas id="incomeChart"></canvas>
+                    </div>
+
+                    <!-- Faollik Statistikasi -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h4 class="font-bold mb-4 text-xl text-gray-800">Faollik</h4>
+                        <canvas id="activityChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 19. Achievement Timeline -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Bizning yutuqlar</h2>
+            <div class="max-w-3xl mx-auto relative">
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-200"></div>
+                <div class="space-y-12 relative">
+                    <!-- Timeline Items with Animations -->
+                    <div class="timeline-item opacity-0 translate-x-10 transition-all duration-700 ease-out">
+                        <div class="relative flex items-center">
+                            <div class="flex-1 text-right pr-8">
+                                <h3 class="font-bold text-xl text-gray-800">Ilova ishga tushirildi</h3>
+                                <p class="text-gray-600">2025-yil Yanvar</p>
+                            </div>
+                            <div class="w-6 h-6 bg-black rounded-full shadow-lg pulse-animation"></div>
+                            <div class="flex-1 pl-8 text-left">
+                                <p class="text-gray-700">Birinchi versiya market'ga chiqarildi</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item opacity-0 translate-x-10 transition-all duration-700 ease-out delay-300">
+                        <div class="relative flex items-center">
+                            <div class="flex-1 text-right pr-8">
+                                <h3 class="font-bold text-xl text-gray-800">Yangi funksiyalar</h3>
+                                <p class="text-gray-600">2025-yil Mart</p>
+                            </div>
+                            <div class="w-6 h-6 bg-black rounded-full shadow-lg pulse-animation"></div>
+                            <div class="flex-1 pl-8 text-left">
+                                <p class="text-gray-700">Premium versiya va qo'shimcha imkoniyatlar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item opacity-0 translate-x-10 transition-all duration-700 ease-out delay-600">
+                        <div class="relative flex items-center">
+                            <div class="flex-1 text-right pr-8">
+                                <h3 class="font-bold text-xl text-gray-800">Katta yangilanish</h3>
+                                <p class="text-gray-600">2025-yil Iyun</p>
+                            </div>
+                            <div class="w-6 h-6 bg-black rounded-full shadow-lg pulse-animation"></div>
+                            <div class="flex-1 pl-8 text-left">
+                                <p class="text-gray-700">Xalqaro bozorga chiqish</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="full-timeline.html" class="inline-block px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition">
+                    Barcha yutuqlarni ko'rish
+                </a>
+            </div>
+        </div>
+    </section>
+
+ 
+
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold text-center mb-12">Bizning jamoa</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4"></div>
+                    <h3 class="font-bold">Nurmuxammad Rayimov</h3>
+                    <p class="text-gray-600">CEO</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4"></div>
+                    <h3 class="font-bold">Sanjar</h3>
+                    <p class="text-gray-600">UX Dizayner</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4"></div>
+                    <h3 class="font-bold">Qurbonpular</h3>
+                    <p class="text-gray-600">Mobil Dasturchi</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4"></div>
+                    <h3 class="font-bold">Nurbek Akmalov</h3>
+                    <p class="text-gray-600">Backend Dasturchi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-12 text-gray-800 tracking-tight">Ilovani yuklab oling</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <!-- QR Code -->
+                    <div class="flex justify-center">
+                        <div class="relative w-64 h-64 bg-white shadow-lg rounded-xl border-2 border-gray-100 flex items-center justify-center overflow-hidden group">
+                            <div id="qrCode" class="w-48 h-48 bg-gray-200 animate-pulse"></div>
+                            <button onclick="generateQR()" class="absolute inset-0 bg-black/30 text-white opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <iconify-icon icon="lucide:refresh-cw" class="text-2xl"></iconify-icon>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Download Buttons -->
+                    <div class="space-y-6">
+                        <button 
+                            onclick="downloadApp('google')"
+                            class="w-full py-4 px-6 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-300 flex items-center justify-center space-x-3 transform hover:scale-105 shadow-lg">
+                            <iconify-icon icon="logos:google-play-icon" class="text-2xl"></iconify-icon>
+                            <span class="font-semibold">Google Play'dan yuklab oling</span>
+                        </button>
+                        
+                        <button 
+                            onclick="downloadApp('apple')"
+                            class="w-full py-4 px-6 bg-black text-white rounded-lg hover:bg-gray-800 transition duration-300 flex items-center justify-center space-x-3 transform hover:scale-105 shadow-lg">
+                            <iconify-icon icon="logos:apple" class="text-2xl"></iconify-icon>
+                            <span class="font-semibold">App Store'dan yuklab oling</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Ko'p so'raladigan savollar</h2>
+            <div class="max-w-2xl mx-auto space-y-4">
+                <!-- FAQ 1 -->
+                <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+                    <button class="faq-btn w-full text-left p-4 font-semibold flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="text-gray-800">Ilovadan foydalanish pullikmi?</span>
+                        <iconify-icon icon="carbon:chevron-down" class="faq-icon transition-transform duration-300" width="24" height="24"></iconify-icon>
+                    </button>
+                    <div class="faq-answer hidden p-4 border-t bg-gray-100 text-gray-600">
+                        <p>Asosiy funksiyalar bepul, qo'shimcha imkoniyatlar uchun to'lov mavjud. Siz ilovaning asosiy xususiyatlaridan mutlaqo bepul foydalanishingiz mumkin.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+                    <button class="faq-btn w-full text-left p-4 font-semibold flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="text-gray-800">Internet kerakmi?</span>
+                        <iconify-icon icon="carbon:chevron-down" class="faq-icon transition-transform duration-300" width="24" height="24"></iconify-icon>
+                    </button>
+                    <div class="faq-answer hidden p-4 border-t bg-gray-100 text-gray-600">
+                        <p>Ba'zi funksiyalar oflayn ishlaydi, to'liq funksionallik uchun internet kerak. Asosiy vazifalarni internetga ulanmasdan ham bajara olasiz.</p>
+                    </div>
+                </div>
+
+                <!-- Additional FAQs -->
+                <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+                    <button class="faq-btn w-full text-left p-4 font-semibold flex justify-between items-center hover:bg-gray-50 transition">
+                        <span class="text-gray-800">Qanday qurilmalar qo'llab-quvvatlanadi?</span>
+                        <iconify-icon icon="carbon:chevron-down" class="faq-icon transition-transform duration-300" width="24" height="24"></iconify-icon>
+                    </button>
+                    <div class="faq-answer hidden p-4 border-t bg-gray-100 text-gray-600">
+                        <p>Android 8.0+ va iOS 13+ versiyalarida ishlaydigan smartfonlar va planshetlar uchun mo'ljallangan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 16. User Support -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold text-center mb-12">Qo'llab-quvvatlash</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <span class="iconify text-4xl mb-4" data-icon="carbon:chat"></span>
+                    <h3 class="font-bold mb-2">Online chat</h3>
+                    <p class="text-gray-600">24/7 jonli muloqot</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <span class="iconify text-4xl mb-4" data-icon="carbon:document"></span>
+                    <h3 class="font-bold mb-2">Qo'llanma</h3>
+                    <p class="text-gray-600">Batafsil yo'riqnoma</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <span class="iconify text-4xl mb-4" data-icon="carbon:video"></span>
+                    <h3 class="font-bold mb-2">Video darslar</h3>
+                    <p class="text-gray-600">O'rgatuvchi videolar</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-2xl font-bold text-center mb-12">Biz bilan bog'laning</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Contact Info -->
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="font-bold mb-2">Manzil</h3>
+                            <p class="text-gray-600">Toshkent shahri, Chilonzor tumani, IT Park</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold mb-2">Telefon</h3>
+                            <p class="text-gray-600">+998 90 123 45 67</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold mb-2">Email</h3>
+                            <p class="text-gray-600">info@example.com</p>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-600 hover:text-black">
+                                <span class="iconify text-2xl" data-icon="carbon:logo-facebook"></span>
+                            </a>
+                            <a href="#" class="text-gray-600 hover:text-black">
+                                <span class="iconify text-2xl" data-icon="carbon:logo-instagram"></span>
+                            </a>
+                            <a href="#" class="text-gray-600 hover:text-black">
+                                <span class="iconify text-2xl" data-icon="carbon:logo-telegram"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <form class="space-y-4">
+                        <div>
+                            <input type="text" placeholder="Ismingiz"
+                                class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-black">
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Email"
+                                class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-black">
+                        </div>
+                        <div>
+                            <textarea placeholder="Xabar"
+                                class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-black h-32"></textarea>
+                        </div>
+                        <button class="w-full px-8 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition">
+                            Yuborish
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Kompaniya</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-gray-300">Biz haqimizda</a></li>
+                        <li><a href="#" class="hover:text-gray-300">Jamoa</a></li>
+                        <li><a href="#" class="hover:text-gray-300">Blog</a></li>
+                        <li><a href="#" class="hover:text-gray-300">Aloqa</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Mahsulot</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-gray-300">Xususiyatlar</a></li>
+                        <li><a href="#" class="hover:text-gray-300">Narxlar</a></li>
+                        <li><a href="#" class="hover:text-gray-300">FAQ</a></li>
+                        <li><a href="#" class="hover:text-gray-300">Qo'llanma</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Huquqiy</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-gray-300">Maxfiylik siyosati</a></li>
+                        <li><a href="#" class="hover:text-gray-300">Foydalanish shartlari</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Yuklab olish</h3>
+                    <div class="space-y-4">
+                        <a href="#" class="block">
+                            <img src="/api/placeholder/150/50" alt="App Store" class="rounded-lg" />
+                        </a>
+                        <a href="#" class="block">
+                            <img src="/api/placeholder/150/50" alt="Google Play" class="rounded-lg" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Barcha huquqlar himoyalangan</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
     <script>
-        // Scroll
-        document.addEventListener('DOMContentLoaded', function () {
-            const sections = Array.from(document.querySelectorAll('.section'));
-            let currentIndex = 0;
-            let isAnimating = false;
-            let lastScrollTime = Date.now();
-            const scrollCooldown = 700; // Biroz oshirildi (600ms -> 700ms)
-            const minScrollDelta = 50; // Kichik scroll harakatlarini bloklash uchun
-        
-            // Har bir bo‘limning joylashuvini boshlang‘ich holatda o‘rnatish
-            sections.forEach((section, index) => {
-                section.style.transform = `translateY(${index * 100}%)`;
-            });
-        
-            function moveToSection(direction) {
-                if (isAnimating) return false;
-                const nextIndex = currentIndex + direction;
-        
-                if (nextIndex < 0 || nextIndex >= sections.length) return false;
-        
-                const now = Date.now();
-                if (now - lastScrollTime < scrollCooldown) return false;
-        
-                isAnimating = true;
-                lastScrollTime = now;
-        
-                sections.forEach((section, index) => {
-                    section.style.transform = `translateY(${(index - nextIndex) * 100}%)`;
-                });
-        
-                currentIndex = nextIndex;
-        
-                setTimeout(() => {
-                    isAnimating = false;
-                }, scrollCooldown);
-        
-                return true;
-            }
-        
-            // Wheel event uchun to‘liq bloklovchi
-            let isScrollBlocked = false;
-        
-            function handleScroll(event) {
-                event.preventDefault();
-        
-                if (isScrollBlocked) return;
-        
-                if (Math.abs(event.deltaY) < minScrollDelta) return; // Juda kichik scrollni inkor qilish
-        
-                let direction = event.deltaY > 0 ? 1 : -1;
-                let moved = moveToSection(direction);
-        
-                if (moved) {
-                    isScrollBlocked = true;
-                    setTimeout(() => {
-                        isScrollBlocked = false;
-                    }, scrollCooldown);
-                }
-            }
-        
-            window.addEventListener('wheel', handleScroll, { passive: false });
-        
-            // Touch handling (sensor ekranlar uchun)
-            let touchStartY = 0;
-            let isTouchBlocked = false;
-            const touchThreshold = 50; // Sensitivlikni moslashtirish
-        
-            window.addEventListener('touchstart', (e) => {
-                touchStartY = e.touches[0].clientY;
-            });
-        
-            window.addEventListener('touchmove', (e) => {
-                e.preventDefault();
-        
-                if (isTouchBlocked) return;
-        
-                let currentY = e.touches[0].clientY;
-                let deltaY = touchStartY - currentY;
-        
-                if (Math.abs(deltaY) < touchThreshold) return; // Juda kichik harakatlarni bloklash
-        
-                let direction = deltaY > 0 ? 1 : -1;
-                let moved = moveToSection(direction);
-        
-                if (moved) {
-                    isTouchBlocked = true;
-                    setTimeout(() => {
-                        isTouchBlocked = false;
-                    }, scrollCooldown);
-                }
-            }, { passive: false });
-        
-            window.addEventListener('touchend', () => {
-                isTouchBlocked = false;
-            });
-        
-            // Klaviatura eventlari
-            window.addEventListener('keydown', (e) => {
-                if (e.key === 'ArrowDown' || e.key === 'PageDown') {
-                    moveToSection(1);
-                } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
-                    moveToSection(-1);
-                }
-            });
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
-  
 
+        // Changing Text Animation
+        const texts = [
+            { text: "Hayotingizni yengillashtiruvchi ilova", font: "font-gold" },
+            { text: "Tezkor va ishonchli yechim", font: "font-playfair" },
+            { text: "Zamonaviy yondashuv", font: "font-lora" },
+            { text: "Qulay va sodda interfeys", font: "font-mareline" },
+            { text: "Har doim siz bilan", font: "font-sf" }
+        ];
 
+        let currentIndex = 0;
+        const changingText = document.getElementById('changingText');
 
+        function updateText() {
+            changingText.style.opacity = '0';
 
-        // Menu
-        const menuToggle = document.getElementById("menu-toggle");
-        const menu = document.getElementById("menu");
-        
-        menuToggle.addEventListener("click", () => {
-            // Menyuni ochish/yopish
-            menu.classList.toggle("hidden");
-        
-            // Vibratsiyani ishga tushirish
-            handleVibration();
-        });
-        
-        // Vibratsiya funktsiyasi
-        function handleVibration() {
-            // Brauzer vibratsiyani qo'llab-quvvatlasa
-            if (navigator.vibrate) {
-                try {
-                    // Vibratsiyani boshlash (200ms)
-                    navigator.vibrate(200);
-                } catch (error) {
-                    console.error("Vibratsiyada xatolik:", error);
-                }
-            } else {
-                console.log("Brauzer vibratsiyani qo'llab-quvvatlamaydi");
-            }
+            setTimeout(() => {
+                changingText.className = `text-4xl md:text-6xl lg:text-7xl text-center text-[#614C39] font-bold px-6 transition-all duration-500 ease-in-out ${texts[currentIndex].font}`;
+                changingText.textContent = texts[currentIndex].text;
+                changingText.style.opacity = '1';
+
+                currentIndex = (currentIndex + 1) % texts.length;
+            }, 500);
         }
+
+        changingText.style.transition = 'opacity 0.5s ease';
+        updateText();
+        setInterval(updateText, 3000);
+
+        // Video player functionality
+        document.querySelectorAll('.video-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const videoId = card.dataset.videoId;
+                // Video player logic
+            });
+        });
+
+        // Dashboard charts
+        document.addEventListener('DOMContentLoaded', () => {
+            // Foydalanuvchilar Statistikasi
+            new Chart(document.getElementById('userChart'), {
+                type: 'line',
+                data: {
+                    labels: ['Yan', 'Fev', 'Mar', 'Apr', 'May', 'Iyun'],
+                    datasets: [{
+                        label: 'Yangi Foydalanuvchilar',
+                        data: [120, 190, 300, 450, 600, 750],
+                        borderColor: 'rgb(75, 192, 192)',
+                        tension: 0.4
+                    }]
+                }
+            });
+
+            // Daromad Statistikasi
+            new Chart(document.getElementById('incomeChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Yan', 'Fev', 'Mar', 'Apr', 'May', 'Iyun'],
+                    datasets: [{
+                        label: 'Oylik Daromad',
+                        data: [5000, 7500, 10000, 12500, 15000, 17500],
+                        backgroundColor: 'rgba(54, 162, 235, 0.6)'
+                    }]
+                }
+            });
+
+            // Faollik Statistikasi
+            new Chart(document.getElementById('activityChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Kunlik Faol', 'Haftlik Faol', 'Oylik Faol'],
+                    datasets: [{
+                        data: [45, 30, 25],
+                        backgroundColor: [
+                            'rgb(255, 99, 132)',
+                            'rgb(54, 162, 235)',
+                            'rgb(255, 205, 86)'
+                        ]
+                    }]
+                }
+            });
+        });
+
+
+
+
+
+
+
+        function scroll(direction) {
+            const gallery = document.getElementById('gallery');
+            const scrollAmount = direction === 'left' ? -400 : 400;
+            gallery.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+
+        // Touch scroll handling
+        let touchStart = 0;
+        const gallery = document.getElementById('gallery');
+
+        gallery.addEventListener('touchstart', (e) => {
+            touchStart = e.touches[0].clientX;
+        });
+
+        gallery.addEventListener('touchmove', (e) => {
+            if (!touchStart) return;
+
+            const touchEnd = e.touches[0].clientX;
+            const diff = touchStart - touchEnd;
+
+            gallery.scrollLeft += diff;
+            touchStart = touchEnd;
+        });
+
+        gallery.addEventListener('touchend', () => {
+            touchStart = 0;
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            let hasAnimated = false;
+
+            function animateValue(element, start, end, duration) {
+                if (start === end) return;
+                const range = end - start;
+                let current = start;
+                const step = Math.ceil(range / (duration / 20)); // Har 20ms da o'zgarish
+                const timer = setInterval(function () {
+                    current += step;
+                    if ((step > 0 && current >= end) || (step < 0 && current <= end)) {
+                        current = end;
+                        clearInterval(timer);
+                    }
+                    element.textContent = current + (element.hasAttribute('data-suffix') ? element.getAttribute('data-suffix') : '');
+                }, 20); // Har 20ms da ishlaydi
+            }
+
+            function startAnimation() {
+                if (!hasAnimated) {
+                    document.querySelectorAll('.counter').forEach(counter => {
+                        const target = parseFloat(counter.getAttribute('data-target'));
+                        animateValue(counter, 0, target, 1000); // 1000ms = 1 sekund
+                    });
+                    hasAnimated = true;
+                }
+            }
+
+            // Animatsiyani boshlash
+            startAnimation();
+        });
+
+        function selectPlan(plan) {
+            // Reset radio buttons
+            document.querySelectorAll('[id$="-radio"] div').forEach(el => {
+                el.classList.add('hidden');
+            });
+
+            // Show selected radio button
+            const radio = document.querySelector(`#${plan}-radio div`);
+            radio.classList.remove('hidden');
+
+            // Update features and button
+            const features = document.querySelectorAll('.feature-item');
+
+            features.forEach(feature => {
+                const icon = feature.querySelector('.feature-icon');
+                const title = feature.querySelector('.feature-title');
+                const badge = feature.querySelector('.feature-badge');
+
+                if (plan === 'premium') {
+                    feature.classList.remove('opacity-50');
+                    icon.classList.remove('text-gray-400');
+                    icon.classList.add('text-purple-600');
+                    title.classList.remove('text-gray-400');
+                    badge.classList.remove('bg-gray-200', 'text-gray-400');
+                    badge.classList.add('bg-orange-100', 'text-orange-600');
+                } else {
+                    feature.classList.add('opacity-50');
+                    icon.classList.add('text-gray-400');
+                    icon.classList.remove('text-purple-600');
+                    title.classList.add('text-gray-400');
+                    badge.classList.add('bg-gray-200', 'text-gray-400');
+                    badge.classList.remove('bg-orange-100', 'text-orange-600');
+                }
+            });
+        }
+
+        function toggleFeatureInfo(element) {
+            const info = element.querySelector('.feature-info');
+            info.classList.toggle('hidden');
+        }
+
+        // Initialize with Basic plan selected
+        selectPlan('basic');
+
+        function generateQR() {
+            const qrCodeElement = document.getElementById('qrCode');
+            qrCodeElement.innerHTML = '';
+            qrCodeElement.classList.add('animate-pulse', 'bg-gray-200');
+            
+            // Simulate QR code generation
+            setTimeout(() => {
+                qrCodeElement.classList.remove('animate-pulse', 'bg-gray-200');
+                qrCodeElement.innerHTML = `
+                    <img src="/qr-code (3).png" 
+                         alt="QR Code" 
+                         class="w-full h-full object-cover"
+                    />
+                `;
+            }, 1500);
+        }
+
+        function downloadApp(platform) {
+            alert(`Siz ${platform === 'google' ? 'Google Play' : 'App Store'} orqali ilovani yuklab olmoqdasiz!`);
+            // Here you would typically redirect to the actual app store
+        }
+
+        // Generate initial QR on page load
+        generateQR();
+
+
+
+        document.querySelectorAll('.faq-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const icon = button.querySelector('.faq-icon');
+                
+                answer.classList.toggle('hidden');
+                icon.style.transform = answer.classList.contains('hidden') 
+                    ? 'rotate(0deg)' 
+                    : 'rotate(180deg)';
+            });
+        });
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateX(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            timelineItems.forEach(item => observer.observe(item));
+        });
     </script>
 </body>
 
