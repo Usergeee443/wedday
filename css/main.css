@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600&display=swap');
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    background-color: #F2F2F7;
+}
+
 .font-gold {
     font-family: 'Gold Shine', sans-serif;
 }
@@ -187,4 +194,58 @@
 
 .share-icon:hover {
     opacity: 1;
+}
+
+
+
+        
+
+.ios-group {
+    margin: 35px 0;
+}
+
+.ios-group-label {
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.ios-list {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.ios-list-item {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.ios-list-item:last-child {
+    border-bottom: none;
+}
+
+.ios-chevron {
+    transition: transform 0.3s ease;
+}
+
+.ios-list-item.active .ios-chevron {
+    transform: rotate(90deg);
+}
+
+.content-area {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: #F8F8F8;
+}
+
+.content-area.active {
+    max-height: 500px;
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 900px;
+    }
 }
