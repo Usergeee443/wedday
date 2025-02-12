@@ -20,98 +20,78 @@
 
     <link rel="stylesheet" href="/css/main.css">
 
-
-    <link href="https://fonts.cdnfonts.com/css/gold-shine-2" rel="stylesheet">
-
-    <link href="https://cdnfonts.com/css/playfair-display" rel="stylesheet">
-
-    <link href="https://cdnfonts.com/css/lora" rel="stylesheet">
-
-    <link href="https://fonts.cdnfonts.com/css/mareline-script" rel="stylesheet">
-
-    <link href="https://fonts.cdnfonts.com/css/tiny-pixy" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik+Pixels&display=swap" rel="stylesheet">
 
 </head>
 
 
 <body class="font-sans bg-white">
-    <!-- Header -->
-    <header class="fixed w-full bg-white bg-opacity-80 backdrop-blur-lg border-b z-50 shadow-lg">
-        <nav class="container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <!-- Logo -->
-                <div class="text-black text-2xl font-bold">
-                    w
-                </div>
+    <!-- Navigation -->
+    <nav class="glass-effect fixed w-full z-50 px-6 py-4 flex justify-between items-center border-b border-gray-200/30 backdrop-blur-md">
+        <div class="text-[#1D1D1F] font-semibold text-xl">wedday</div>
+        <button onclick="openModal()" 
+                class="text-sm font-medium text-[#0066CC] hover:text-[#0A84FF] transition-colors duration-300">
+            Yuklab olish
+        </button>
+    </nav>
 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8">
-                    <a href="/about.html"
-                        class="text-gray-800 hover:text-black transition duration-300">Bizhaqimizda</a>
-                    <a href="#download" class="text-gray-800 hover:text-black transition duration-300">Yuklab olish</a>
-                    <a href="/pages/blog.html" class="text-gray-800 hover:text-black transition duration-300">Blog</a>
-                    <a href="https://mychat-ppji.onrender.com"
-                        class="text-gray-800 hover:text-black transition duration-300">Chat</a>
-
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button id="menuBtn" class="md:hidden text-black">
-                    <i class="fas fa-bars text-2xl"></i>
+    <!-- Hero Section -->
+    <section class="flex-1 pt-24 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between py-20">
+            <!-- Text Content -->
+            <div class="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0">
+                <h1 class="text-5xl lg:text-6xl font-semibold text-[#1D1D1F] tracking-tight leading-tight mb-6">
+                    Discover a New Way to Connect
+                </h1>
+                <p class="text-xl text-[#86868B] mb-8 leading-relaxed">
+                    Experience seamless integration and elegant design in every interaction.
+                </p>
+                <button onclick="openModal()" 
+                        class="download-btn bg-[#007AFF] text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-[#0A84FF] transition-colors duration-300 shadow-lg hover:shadow-xl">
+                    Download Now
                 </button>
-            </div>
-
-            <!-- Mobile Menu -->
-            <div id="mobileMenu" class="hidden md:hidden mt-4">
-                <div class="flex flex-col space-y-4">
-                    <a href="/pages/about.html" class="text-gray-800 hover:text-black transition duration-300">Biz
-                        haqimizda</a>
-                    <a href="#download" class="text-gray-800 hover:text-black transition duration-300">Yuklab olish</a>
-                    <a href="/pages/blog.html" class="text-gray-800 hover:text-black transition duration-300">Blog</a>
-                    <a href="https://mychat-ppji.onrender.com"
-                        class="text-gray-800 hover:text-black transition duration-300">Chat</a>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <section class="w-full h-screen flex flex-col items-center justify-center bg-[#ffffff]">
-        <div id="changingText"
-            class="text-4xl md:text-6xl lg:text-7xl text-center text-black px-6 transition-all ease-in-out"></div>
-        <button class="download-btn" onclick="openModal()">Ilovani yuklab olish</button>
+            </div>            
+        </div>
     </section>
 
-    <div id="downloadModal" class="modal">
-        <div class="modal-content">
-            <button class="close-btn" onclick="closeModal()">&times;</button>
-            <button class="share-btn" onclick="shareWebsite()">
-                <i class="fas fa-share"></i>
-            </button>
-
-            <div class="qr-section">
-                <h2 class="text-2xl font-bold text-[#614C39] mb-4">Ilovani yuklab olish</h2>
-                <div class="qr-container">
-                    <div id="qrcode"></div>
+    <!-- Modal -->
+    <div id="downloadModal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-md">
+        <div class="p-6 bg-white max-w-md w-full mx-4 rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-300 ease-out">
+            <!-- Sarlavha va Yopish Tugmasi -->
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-[#1D1D1F]">Ilovani yuklab oling</h2>
+                <button onclick="closeModal()" 
+                        class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors duration-200">
+                    <i class="fas fa-times text-[#86868B]"></i>
+                </button>
+            </div>
+    
+            <!-- QR Code -->
+            <div class="mb-6">
+                <div class="bp-4">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://example.com" 
+                         alt="QR Code"
+                         class="w-40 h-40 mx-auto">
+                    <p class="text-center text-sm text-[#86868B] mt-3">
+                        Yuklab olish uchun skanerlash
+                    </p>
                 </div>
             </div>
-
-            <div class="store-buttons">
-                <a href="#" class="store-btn">
-                    <i class="fab fa-google-play"></i>
-                    Play Market
+    
+            <!-- Store Buttons -->
+            <div class="space-y-4">
+                <a href="#" class="store-btn block w-full bg-[#007AFF] text-white py-3 px-6 rounded-xl flex items-center justify-center space-x-3 hover:bg-[#0A84FF] transition-all duration-200 hover:shadow-md">
+                    <i class="fab fa-apple text-xl"></i>
+                    <span class="font-medium">App Store</span>
                 </a>
-                <a href="#" class="store-btn">
-                    <i class="fab fa-app-store-ios"></i>
-                    App Store
+                <a href="#" class="store-btn block w-full bg-[#1A73E8] text-white py-3 px-6 rounded-xl flex items-center justify-center space-x-3 hover:bg-[#1B66C9] transition-all duration-200 hover:shadow-md">
+                    <i class="fab fa-google-play text-xl"></i>
+                    <span class="font-medium">Google Play</span>
                 </a>
             </div>
         </div>
@@ -255,236 +235,6 @@
     </section>
 
 
-    <!-- 4. Testimonials Section -->
-    <section class="py-16 bg-gradient-to-b from-gray-50 to-white" id="testimonials">
-        <div class="container mx-auto px-4 max-w-7xl">
-            <div class="flex flex-col items-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Foydalanuvchilar fikri</h2>
-                <div class="w-20 h-1 bg-[#614C39] rounded-full"></div>
-            </div>
-
-            <!-- Desktop Grid -->
-            <div class="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-white rounded-2xl transition-all duration-300 p-6">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 bg-[#614C39] rounded-full flex items-center justify-center">
-                            <span class="text-lg text-white font-semibold">AK</span>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-gray-800">Aziz Karimov</h3>
-                            <div class="flex text-yellow-400">★★★★★</div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600">"Ajoyib ilova! Kundalik ishlarimni ancha yengillashtirdi."</p>
-                </div>
-
-                <div class="bg-white rounded-2xl transition-all duration-300 p-6">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 bg-[#614C39] rounded-full flex items-center justify-center">
-                            <span class="text-lg text-white font-semibold">AK</span>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-gray-800">Aziz Karimov</h3>
-                            <div class="flex text-yellow-400">★★★★★</div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600">"Ajoyib ilova! Kundalik ishlarimni ancha yengillashtirdi."</p>
-                </div>
-
-                <div class="bg-white rounded-2xl transition-all duration-300 p-6">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 bg-[#614C39] rounded-full flex items-center justify-center">
-                            <span class="text-lg text-white font-semibold">AK</span>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-gray-800">Aziz Karimov</h3>
-                            <div class="flex text-yellow-400">★★★★★</div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600">"Ajoyib ilova! Kundalik ishlarimni ancha yengillashtirdi."</p>
-                </div>
-
-                <div class="bg-white rounded-2xl transition-all duration-300 p-6">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 bg-[#614C39] rounded-full flex items-center justify-center">
-                            <span class="text-lg text-white font-semibold">AK</span>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-gray-800">Aziz Karimov</h3>
-                            <div class="flex text-yellow-400">★★★★★</div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600">"Ajoyib ilova! Kundalik ishlarimni ancha yengillashtirdi."</p>
-                </div>
-
-                <div class="bg-white rounded-2xl transition-all duration-300 p-6">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 bg-[#614C39] rounded-full flex items-center justify-center">
-                            <span class="text-lg text-white font-semibold">AK</span>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-gray-800">Aziz Karimov</h3>
-                            <div class="flex text-yellow-400">★★★★★</div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600">"Ajoyib ilova! Kundalik ishlarimni ancha yengillashtirdi."</p>
-                </div>
-
-                <div class="bg-white rounded-2xl transition-all duration-300 p-6">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-12 h-12 bg-[#614C39] rounded-full flex items-center justify-center">
-                            <span class="text-lg text-white font-semibold">AK</span>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-gray-800">Aziz Karimov</h3>
-                            <div class="flex text-yellow-400">★★★★★</div>
-                        </div>
-                    </div>
-                    <p class="text-gray-600">"Ajoyib ilova! Kundalik ishlarimni ancha yengillashtirdi."</p>
-                </div>
-
-            </div>
-
-            <div class="md:hidden swiper">
-                <div class="swiper-wrapper"></div>
-            </div>
-
-            <div class="flex justify-center mt-8 gap-4">
-                <button onclick="showAllTestimonials()"
-                    class="bg-white border border-[1px] border-solid border-[#614C39] text-[#614C39] px-6 py-3 rounded-full transition-colors">
-                    Barchasini ko'rish
-                </button>
-                <button id="openFeedbackModalBtn"
-                    class="bg-[#614C39] text-white px-6 py-3 rounded-full transition-colors">
-                    Fikr bildirish
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Full Testimonials Modal -->
-    <div id="allTestimonialsModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
-        <div class="container mx-auto px-4 h-full flex items-center justify-center">
-            <div class="bg-white rounded-2xl p-6 md:p-8 w-full max-w-4xl max-h-[80vh] overflow-y-auto relative">
-                <button id="closeModalBtn" class="absolute right-4 top-4 text-gray-500 hover:text-gray-700">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
-                        </path>
-                    </svg>
-                </button>
-
-                <h2 class="text-2xl font-bold mb-6">Barcha foydalanuvchi fikrlari</h2>
-
-                <!-- Pagination Controls -->
-                <div class="flex justify-between items-center mb-6">
-                    <span id="pageInfo" class="text-gray-600"></span>
-                    <div class="flex gap-2">
-                        <button id="prevPage"
-                            class="px-4 py-2 bg-gray-100 rounded-lg hover:bg-gray-200">Oldingisi</button>
-                        <button id="nextPage"
-                            class="px-4 py-2 bg-gray-100 rounded-lg hover:bg-gray-200">Keyingisi</button>
-                    </div>
-                </div>
-
-                <!-- Testimonials Grid in Modal -->
-                <div id="testimonialsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Will be populated via JavaScript -->
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div id="feedbackModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
-        <div class="container mx-auto px-4 h-full flex items-center justify-center">
-            <div class="bg-white rounded-2xl p-6 md:p-8 w-full max-w-2xl relative">
-                <button id="closeFeedbackBtn" class="absolute right-4 top-4 text-gray-500 hover:text-gray-700">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
-                        </path>
-                    </svg>
-                </button>
-
-                <h2 class="text-2xl font-bold mb-6">Fikr bildirish</h2>
-
-                <form id="feedbackForm" class="space-y-6">
-                    <!-- Image Upload -->
-                    <div class="space-y-2">
-                        <label class="block text-gray-700">Rasmingiz (ixtiyoriy)</label>
-                        <div class="relative border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
-                            <input type="file" id="imageUpload" accept="image/*" class="hidden" />
-                            <label for="imageUpload" class="cursor-pointer">
-                                <div id="previewContainer" class="hidden mb-2">
-                                    <img id="imagePreview" class="mx-auto max-h-40 object-contain" />
-                                </div>
-                                <div id="uploadPrompt">
-                                    <p class="text-gray-500">Rasm yuklash uchun bosing</p>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Name Fields -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-gray-700">Ism *</label>
-                            <input type="text" id="firstName" required
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#614C39] focus:ring focus:ring-[#614C39] focus:ring-opacity-50" />
-                        </div>
-                        <div>
-                            <label class="block text-gray-700">Familiya</label>
-                            <input type="text" id="lastName"
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#614C39] focus:ring focus:ring-[#614C39] focus:ring-opacity-50" />
-                        </div>
-                    </div>
-
-                    <!-- Star Rating -->
-                    <div>
-                        <label class="block text-gray-700 mb-2">Baholash *</label>
-                        <div id="starRating" class="flex items-center">
-                            <span class="star cursor-pointer text-3xl mr-1" data-rating="1">☆</span>
-                            <span class="star cursor-pointer text-3xl mr-1" data-rating="2">☆</span>
-                            <span class="star cursor-pointer text-3xl mr-1" data-rating="3">☆</span>
-                            <span class="star cursor-pointer text-3xl mr-1" data-rating="4">☆</span>
-                            <span class="star cursor-pointer text-3xl mr-1" data-rating="5">☆</span>
-                            <input type="hidden" id="ratingValue" name="rating" required>
-                        </div>
-                    </div>
-
-                    <!-- Feedback Text -->
-                    <div>
-                        <label class="block text-gray-700">Fikringiz *</label>
-                        <textarea id="feedback" required rows="4"
-                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#614C39] focus:ring focus:ring-[#614C39] focus:ring-opacity-50"></textarea>
-                    </div>
-
-                    <!-- Submit Button -->
-                    <button type="submit"
-                        class="w-full bg-[#614C39] text-white px-6 py-3 rounded-full transition-colors hover:bg-[#503d2e]">
-                        Yuborish
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- 8. Blog Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl font-bold text-center mb-12">Latest News</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-xl overflow-hidden shadow-md"> <img src="/img/2025-01-22 16.08.08.jpg"
-                        alt="Blog" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="font-semibold mb-2 text-gray-800">New Version Released</h3>
-                        <p class="text-gray-600 mb-4">Discover the new features and improvements</p> <a
-                            href="/pages/blog.html" class="text-indigo-600 font-semibold hover:underline">Read More
-                            →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <div class="max-w-md mx-auto p-4 mt-10">
         <div class="container mx-auto px-4">
@@ -624,312 +374,122 @@
     </div>
 
 
-
-
-    <!-- 17. Latest Updates -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl font-semibold text-center mb-12">Latest Updates</h2>
-            <div class="max-w-3xl mx-auto">
-                <div class="space-y-8">
-                    <div class="flex items-start">
-                        <div
-                            class="flex-shrink-0 w-16 h-16 bg-gray-200 rounded-xl flex items-center justify-center mr-4">
-                            <span class="text-2xl font-semibold text-gray-800">2.0</span> </div>
-                        <div>
-                            <h3 class="font-semibold mb-2 text-gray-800">New Interface</h3>
-                            <p class="text-gray-600">Updated design and additional features</p>
-                            <p class="text-sm text-gray-500 mt-2">January 10, 2025</p>
-                        </div>
-                    </div> 
-
-                    <div class="flex items-start">
-                        <div
-                            class="flex-shrink-0 w-16 h-16 bg-gray-200 rounded-xl flex items-center justify-center mr-4">
-                            <span class="text-2xl font-semibold text-gray-800">2.0</span> </div>
-                        <div>
-                            <h3 class="font-semibold mb-2 text-gray-800">New Interface</h3>
-                            <p class="text-gray-600">Updated design and additional features</p>
-                            <p class="text-sm text-gray-500 mt-2">January 10, 2025</p>
-                        </div>
-                    </div> 
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 18. Community -->
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-            <h2 class="text-2xl font-bold text-center mb-12">Jamiyat</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white p-8 rounded-lg shadow-sm">
-                    <h3 class="font-bold text-xl mb-4">Forum</h3>
-                    <p class="text-gray-600 mb-6">Boshqa foydalanuvchilar bilan tajriba almashing</p>
-                    <a href="#"
-                        class="inline-block px-6 py-3 border border-black text-black hover:bg-black hover:text-white transition rounded-lg">
-                        Forumga o'tish
-                    </a>
-                </div>
-                <div class="bg-white p-8 rounded-lg shadow-sm">
-                    <h3 class="font-bold text-xl mb-4">Blog</h3>
-                    <p class="text-gray-600 mb-6">Eng so'nggi yangiliklar va maqolalarni o'qing</p>
-                    <a href="#"
-                        class="inline-block px-6 py-3 border border-black text-black hover:bg-black hover:text-white transition rounded-lg">
-                        Blogni ko'rish
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-16">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Statistika</h2>
-            <div class="dashboard-preview">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Foydalanuvchilar Statistikasi -->
-                    <div class="bg-white p-6 rounded-xl shadow-lg">
-                        <h4 class="font-bold mb-4 text-xl text-gray-800">Foydalanuvchilar</h4>
-                        <canvas id="userChart"></canvas>
+            <h2 class="text-3xl font-bold text-center mb-12 text-[#1D1D1F]">Ko'p so'raladigan savollar</h2>
+            <div class="max-w-2xl mx-auto space-y-4">
+                <!-- FAQ 1 -->
+                <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
+                    <button class="faq-btn w-full text-left p-6 font-medium flex justify-between items-center hover:bg-gray-50">
+                        <span class="text-[#1D1D1F]">Ilovadan foydalanish pullikmi?</span>
+                        <iconify-icon icon="carbon:chevron-down" class="faq-icon text-[#86868B] transition-transform duration-300" width="24" height="24"></iconify-icon>
+                    </button>
+                    <div class="faq-answer hidden p-6 border-t bg-gray-50 text-[#86868B]">
+                        <p>Asosiy funksiyalar bepul, qo'shimcha imkoniyatlar uchun to'lov mavjud. Siz ilovaning asosiy xususiyatlaridan mutlaqo bepul foydalanishingiz mumkin.</p>
                     </div>
-
-                    <!-- Daromad Statistikasi -->
-                    <div class="bg-white p-6 rounded-xl shadow-lg">
-                        <h4 class="font-bold mb-4 text-xl text-gray-800">Daromad</h4>
-                        <canvas id="incomeChart"></canvas>
+                </div>
+    
+                <!-- FAQ 2 -->
+                <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
+                    <button class="faq-btn w-full text-left p-6 font-medium flex justify-between items-center hover:bg-gray-50">
+                        <span class="text-[#1D1D1F]">Internet kerakmi?</span>
+                        <iconify-icon icon="carbon:chevron-down" class="faq-icon text-[#86868B] transition-transform duration-300" width="24" height="24"></iconify-icon>
+                    </button>
+                    <div class="faq-answer hidden p-6 border-t bg-gray-50 text-[#86868B]">
+                        <p>Ba'zi funksiyalar oflayn ishlaydi, to'liq funksionallik uchun internet kerak. Asosiy vazifalarni internetga ulanmasdan ham bajara olasiz.</p>
                     </div>
-
-                    <!-- Faollik Statistikasi -->
-                    <div class="bg-white p-6 rounded-xl shadow-lg">
-                        <h4 class="font-bold mb-4 text-xl text-gray-800">Faollik</h4>
-                        <canvas id="activityChart"></canvas>
+                </div>
+    
+                <!-- FAQ 3 -->
+                <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
+                    <button class="faq-btn w-full text-left p-6 font-medium flex justify-between items-center hover:bg-gray-50">
+                        <span class="text-[#1D1D1F]">Qanday qurilmalar qo'llab-quvvatlanadi?</span>
+                        <iconify-icon icon="carbon:chevron-down" class="faq-icon text-[#86868B] transition-transform duration-300" width="24" height="24"></iconify-icon>
+                    </button>
+                    <div class="faq-answer hidden p-6 border-t bg-gray-50 text-[#86868B]">
+                        <p>Android 8.0+ va iOS 13+ versiyalarida ishlaydigan smartfonlar va planshetlar uchun mo'ljallangan.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 19. Achievement Timeline -->
-    <section class="py-16">
+    <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Bizning yutuqlar</h2>
-            <div class="max-w-3xl mx-auto relative">
-                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-200"></div>
-                <div class="space-y-12 relative">
-                    <!-- Timeline Items with Animations -->
-                    <div class="timeline-item opacity-0 transition-all duration-700 ease-out">
-                        <div class="relative flex items-center">
-                            <div class="flex-1 text-right pr-8">
-                                <h3 class="font-bold text-xl text-gray-800">Ilova ishga tushirildi</h3>
-                                <p class="text-gray-600">2025-yil Yanvar</p>
-                            </div>
-                            <div class="w-6 h-6 bg-black rounded-full shadow-lg pulse-animation"></div>
-                            <div class="flex-1 pl-8 text-left">
-                                <p class="text-gray-700">Birinchi versiya market'ga chiqarildi</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item opacity-0transition-all duration-700 ease-out delay-300">
-                        <div class="relative flex items-center">
-                            <div class="flex-1 text-right pr-8">
-                                <h3 class="font-bold text-xl text-gray-800">Yangi funksiyalar</h3>
-                                <p class="text-gray-600">2025-yil Mart</p>
-                            </div>
-                            <div class="w-6 h-6 bg-black rounded-full shadow-lg pulse-animation"></div>
-                            <div class="flex-1 pl-8 text-left">
-                                <p class="text-gray-700">Premium versiya va qo'shimcha imkoniyatlar</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item opacity-0 transition-all duration-700 ease-out delay-600">
-                        <div class="relative flex items-center">
-                            <div class="flex-1 text-right pr-8">
-                                <h3 class="font-bold text-xl text-gray-800">Katta yangilanish</h3>
-                                <p class="text-gray-600">2025-yil Iyun</p>
-                            </div>
-                            <div class="w-6 h-6 bg-black rounded-full shadow-lg pulse-animation"></div>
-                            <div class="flex-1 pl-8 text-left">
-                                <p class="text-gray-700">Xalqaro bozorga chiqish</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-8">
-                <a href="full-timeline.html"
-                    class="inline-block px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition">
-                    Barcha yutuqlarni ko'rish
+            <h2 class="text-3xl font-bold text-center mb-12 text-[#1D1D1F]">Yordam</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Online Chat -->
+                <a href="#" class="bg-white border border-gray-200 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300">
+                    <iconify-icon icon="carbon:chat" class="text-4xl mb-4 text-[#007AFF]"></iconify-icon>
+                    <h3 class="font-semibold mb-2 text-[#1D1D1F]">Online Chat</h3>
+                    <p class="text-[#86868B]">24/7 Live Chat Support</p>
+                </a>
+    
+                <!-- Manual -->
+                <a href="#" class="bg-white border border-gray-200 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300">
+                    <iconify-icon icon="carbon:document" class="text-4xl mb-4 text-[#007AFF]"></iconify-icon>
+                    <h3 class="font-semibold mb-2 text-[#1D1D1F]">Qo'llanma</h3>
+                    <p class="text-[#86868B]">Batafsil ko'rsatmalar</p>
+                </a>
+    
+                <!-- Video Tutorials -->
+                <a href="#" class="bg-white border border-gray-200 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300">
+                    <iconify-icon icon="carbon:video" class="text-4xl mb-4 text-[#007AFF]"></iconify-icon>
+                    <h3 class="font-semibold mb-2 text-[#1D1D1F]">Video Qo'llanmalar</h3>
+                    <p class="text-[#86868B]">Ta'lim videolari</p>
                 </a>
             </div>
         </div>
     </section>
 
-
-
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl font-bold text-center mb-12">Bizning jamoa</h2>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4"></div>
-                    <h3 class="font-bold">Nurmuxammad Rayimov</h3>
-                    <p class="text-gray-600">CEO</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4"></div>
-                    <h3 class="font-bold">Sanjar</h3>
-                    <p class="text-gray-600">UX Dizayner</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4"></div>
-                    <h3 class="font-bold">Qurbonpular</h3>
-                    <p class="text-gray-600">Mobil Dasturchi</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4"></div>
-                    <h3 class="font-bold">Nurbek Akmalov</h3>
-                    <p class="text-gray-600">Backend Dasturchi</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="download" class="py-16">
-        <div class="container mx-auto px-4">
-            <div class="max-w-3xl mx-auto text-center">
-                <h2 class="text-3xl font-bold mb-12 text-gray-800 tracking-tight">Ilovani yuklab oling</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <button class="download-btn" onclick="openModal()">Ilovani yuklab olish</button>
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="py-16">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Ko'p so'raladigan savollar</h2>
-            <div class="max-w-2xl mx-auto space-y-4">
-                <!-- FAQ 1 -->
-                <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
-                    <button
-                        class="faq-btn w-full text-left p-4 font-semibold flex justify-between items-center hover:bg-gray-50 transition">
-                        <span class="text-gray-800">Ilovadan foydalanish pullikmi?</span>
-                        <iconify-icon icon="carbon:chevron-down" class="faq-icon transition-transform duration-300"
-                            width="24" height="24"></iconify-icon>
-                    </button>
-                    <div class="faq-answer hidden p-4 border-t bg-gray-100 text-gray-600">
-                        <p>Asosiy funksiyalar bepul, qo'shimcha imkoniyatlar uchun to'lov mavjud. Siz ilovaning asosiy
-                            xususiyatlaridan mutlaqo bepul foydalanishingiz mumkin.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ 2 -->
-                <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
-                    <button
-                        class="faq-btn w-full text-left p-4 font-semibold flex justify-between items-center hover:bg-gray-50 transition">
-                        <span class="text-gray-800">Internet kerakmi?</span>
-                        <iconify-icon icon="carbon:chevron-down" class="faq-icon transition-transform duration-300"
-                            width="24" height="24"></iconify-icon>
-                    </button>
-                    <div class="faq-answer hidden p-4 border-t bg-gray-100 text-gray-600">
-                        <p>Ba'zi funksiyalar oflayn ishlaydi, to'liq funksionallik uchun internet kerak. Asosiy
-                            vazifalarni internetga ulanmasdan ham bajara olasiz.</p>
-                    </div>
-                </div>
-
-                <!-- Additional FAQs -->
-                <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
-                    <button
-                        class="faq-btn w-full text-left p-4 font-semibold flex justify-between items-center hover:bg-gray-50 transition">
-                        <span class="text-gray-800">Qanday qurilmalar qo'llab-quvvatlanadi?</span>
-                        <iconify-icon icon="carbon:chevron-down" class="faq-icon transition-transform duration-300"
-                            width="24" height="24"></iconify-icon>
-                    </button>
-                    <div class="faq-answer hidden p-4 border-t bg-gray-100 text-gray-600">
-                        <p>Android 8.0+ va iOS 13+ versiyalarida ishlaydigan smartfonlar va planshetlar uchun
-                            mo'ljallangan.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- 16. User Support -->
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-            <h2 class="text-2xl font-bold text-center mb-12">Qo'llab-quvvatlash</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
-                    <span class="iconify text-4xl mb-4" data-icon="carbon:chat"></span>
-                    <h3 class="font-bold mb-2">Online chat</h3>
-                    <p class="text-gray-600">24/7 jonli muloqot</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
-                    <span class="iconify text-4xl mb-4" data-icon="carbon:document"></span>
-                    <h3 class="font-bold mb-2">Qo'llanma</h3>
-                    <p class="text-gray-600">Batafsil yo'riqnoma</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
-                    <span class="iconify text-4xl mb-4" data-icon="carbon:video"></span>
-                    <h3 class="font-bold mb-2">Video darslar</h3>
-                    <p class="text-gray-600">O'rgatuvchi videolar</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-2xl font-bold text-center mb-12">Biz bilan bog'laning</h2>
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-12 text-[#1D1D1F]">Bog'lanish</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <!-- Contact Info -->
-                    <div class="space-y-6">
+                    <div class="space-y-6 text-[#86868B]">
                         <div>
-                            <h3 class="font-bold mb-2">Manzil</h3>
-                            <p class="text-gray-600">Samarqand viloyati, Urgut tumani, Gus</p>
+                            <h3 class="font-semibold mb-2 text-[#1D1D1F]">Manzil</h3>
+                            <p>Samarqand viloyati, Urgut tumani, Gus</p>
                         </div>
                         <div>
-                            <h3 class="font-bold mb-2">Telefon</h3>
-                            <p class="text-gray-600">+998 91 545 77 33</p>
-                            <p class="text-gray-600">+998 88 611 61 65</p>
+                            <h3 class="font-semibold mb-2 text-[#1D1D1F]">Telefon</h3>
+                            <p>+998 91 545 77 33</p>
+                            <p>+998 88 611 61 65</p>
                         </div>
                         <div>
-                            <h3 class="font-bold mb-2">Email</h3>
-                            <p class="text-gray-600">info@wedday.uz</p>
+                            <h3 class="font-semibold mb-2 text-[#1D1D1F]">Email</h3>
+                            <p>info@wedday.uz</p>
                         </div>
                         <div class="flex space-x-4">
-                            <a href="#" class="text-gray-600 hover:text-black">
-                                <span class="iconify text-2xl" data-icon="carbon:logo-facebook"></span>
+                            <a href="#" class="text-[#86868B] hover:text-[#1D1D1F] transition duration-300">
+                                <iconify-icon icon="carbon:logo-facebook" class="text-2xl"></iconify-icon>
                             </a>
-                            <a href="#" class="text-gray-600 hover:text-black">
-                                <span class="iconify text-2xl" data-icon="carbon:logo-instagram"></span>
+                            <a href="#" class="text-[#86868B] hover:text-[#1D1D1F] transition duration-300">
+                                <iconify-icon icon="carbon:logo-instagram" class="text-2xl"></iconify-icon>
                             </a>
-                            <a href="#" class="text-gray-600 hover:text-black">
-                                <span class="iconify text-2xl" data-icon="carbon:logo-youtube"></span>
+                            <a href="#" class="text-[#86868B] hover:text-[#1D1D1F] transition duration-300">
+                                <iconify-icon icon="carbon:logo-youtube" class="text-2xl"></iconify-icon>
                             </a>
                         </div>
                     </div>
-
+    
                     <!-- Contact Form -->
                     <form class="space-y-4">
                         <div>
                             <input type="text" placeholder="Ismingiz"
-                                class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-black">
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#007AFF]">
                         </div>
                         <div>
                             <input type="email" placeholder="Email"
-                                class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-black">
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#007AFF]">
                         </div>
                         <div>
                             <textarea placeholder="Xabar"
-                                class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-black h-32"></textarea>
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#007AFF] h-32"></textarea>
                         </div>
-                        <button class="w-full px-8 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition">
+                        <button class="w-full px-8 py-3 bg-[#007AFF] text-white rounded-lg hover:bg-[#0A84FF] transition duration-300">
                             Yuborish
                         </button>
                     </form>
@@ -938,59 +498,66 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-black text-white py-12">
+    <footer class="bg-white text-[#1D1D1F] py-12">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company -->
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Kompaniya</h3>
+                    <h3 class="text-xl font-semibold mb-4">Kompaniya</h3>
                     <ul class="space-y-2">
-                        <li><a href="/pages/about.html" class="hover:text-gray-300">Biz haqimizda</a></li>
-                        <li><a href="#" class="hover:text-gray-300">Jamoa</a></li>
-                        <li><a href="/pages/blog.html" class="hover:text-gray-300">Blog</a></li>
-                        <li><a href="#" class="hover:text-gray-300">Aloqa</a></li>
+                        <li><a href="/pages/about.html" class="hover:text-[#86868B]">Biz haqimizda</a></li>
+                        <li><a href="/pages/team.html" class="hover:text-[#86868B]">Jamoa</a></li>
+                        <li><a href="/pages/blog.html" class="hover:text-[#86868B]">Blog</a></li>
+                        <li><a href="#" class="hover:text-[#86868B]">Bog'lanish</a></li>
                     </ul>
                 </div>
+    
+                <!-- Product -->
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Mahsulot</h3>
+                    <h3 class="text-xl font-semibold mb-4">Mahsulot</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-gray-300">Xususiyatlar</a></li>
-                        <li><a href="#" class="hover:text-gray-300">Narxlar</a></li>
-                        <li><a href="#" class="hover:text-gray-300">FAQ</a></li>
-                        <li><a href="#" class="hover:text-gray-300">Qo'llanma</a></li>
+                        <li><a href="#" class="hover:text-[#86868B]">Xususiyatlar</a></li>
+                        <li><a href="#" class="hover:text-[#86868B]">Narxlar</a></li>
+                        <li><a href="#" class="hover:text-[#86868B]">FAQ</a></li>
+                        <li><a href="#" class="hover:text-[#86868B]">Qo'llanma</a></li>
                     </ul>
                 </div>
+    
+                <!-- Legal -->
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Huquqiy</h3>
+                    <h3 class="text-xl font-semibold mb-4">Huquqiy</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-gray-300">Maxfiylik siyosati</a></li>
-                        <li><a href="#" class="hover:text-gray-300">Foydalanish shartlari</a></li>
+                        <li><a href="#" class="hover:text-[#86868B]">Maxfiylik siyosati</a></li>
+                        <li><a href="#" class="hover:text-[#86868B]">Foydalanish shartlari</a></li>
                     </ul>
                 </div>
+    
+                <!-- Download -->
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Yuklab olish</h3>
+                    <h3 class="text-xl font-semibold mb-4">Yuklab olish</h3>
                     <div class="space-y-4">
                         <a href="#" class="block">
-                            <img src="/api/placeholder/150/50" alt="App Store" class="rounded-lg" />
+                            App Store
                         </a>
                         <a href="#" class="block">
-                            <img src="/api/placeholder/150/50" alt="Google Play" class="rounded-lg" />
+                            Google Play
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+            <div class="border-t border-gray-300 mt-12 pt-8 text-center text-[#86868B]">
                 <p>&copy; 2025 Barcha huquqlar himoyalangan</p>
             </div>
         </div>
     </footer>
+    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
     <script src="/js/testimonials.js"></script>
     <script src="/js/changingtext.js"></script>
     <script src="/js/charts.js"></script>
     <script src="/js/downloadmodal.js"></script>
-    <script src="/js/faq.js"></script>
+    <script src="/js/faqs.js"></script>
     <script src="/js/generateQR.js"></script>
     <script src="/js/mobileMenu.js"></script>
     <script src="/js/ourAchievements.js"></script>

@@ -1,36 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600&display=swap');
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
     background-color: #F2F2F7;
-}
-
-.font-gold {
-    font-family: 'Gold Shine', sans-serif;
-}
-
-.font-playfair {
-    font-family: 'Playfair Display', serif;
-}
-
-.font-lora {
-    font-family: 'Lora', serif;
-}
-
-.font-mareline {
-    font-family: 'Mareline Script', sans-serif;
-}
-
-.font-sf {
-    font-family: 'Tiny Pixy', sans-serif;
-}
-
-.anton-regular {
-    font-family: "Anton", serif;
-}
-
-.rubik-pixels-regular {
-    font-family: "Rubik Pixels", serif;
 }
 
 
@@ -91,17 +64,6 @@ body {
     align-items: center;
     justify-content: center;
     z-index: 1000;
-}
-
-.modal-content {
-    background: white;
-    padding: 2.5rem;
-    border-radius: 1.5rem;
-    width: 90%;
-    max-width: 400px;
-    position: relative;
-    animation: fadeIn 0.3s ease-out;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .download-btn {
@@ -198,7 +160,7 @@ body {
 
 
 
-        
+
 
 .ios-group {
     margin: 35px 0;
@@ -217,7 +179,7 @@ body {
 }
 
 .ios-list-item {
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     cursor: pointer;
 }
 
@@ -249,5 +211,7 @@ body {
         max-width: 900px;
     }
 }
+
+
 
 
