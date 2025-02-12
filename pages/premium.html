@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+
+    <div class="max-w-md mx-auto p-4 mt-10">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold text-center">Tarfilar imkoniyatlari</h2>
+            <p class="text-sm text-gray-500 text-center mb-12">Tarfilar imkoniyatlari</p>
+        </div>
+        <div class="bg-white rounded-xl p-4 shadow-xl mb-4">
+            <div class="flex flex-col gap-4" id="plan-selector">
+                <div class="flex items-center justify-between p-3 border rounded-lg cursor-pointer" data-plan="basic"
+                    onclick="selectPlan('basic')">
+                    <div class="flex items-center gap-3">
+                        <div class="w-5 h-5 rounded-full border-2 flex items-center justify-center" id="basic-radio">
+                            <div class="w-3 h-3 bg-blue-600 rounded-full hidden"></div>
+                        </div>
+                        <span class="text-lg font-medium">Basic</span>
+                    </div>
+                    <span class="text-lg">Bepul</span>
+                </div>
+                <div class="flex items-center justify-between p-3 border rounded-lg cursor-pointer" data-plan="premium"
+                    onclick="selectPlan('premium')">
+                    <div class="flex items-center gap-3">
+                        <div class="w-5 h-5 rounded-full border-2 flex items-center justify-center" id="premium-radio">
+                            <div class="w-3 h-3 bg-blue-600 rounded-full hidden"></div>
+                        </div>
+                        <span class="text-lg font-medium text-orange-500">Premium</span>
+                    </div>
+                    <span class="text-lg text-orange-500">39 990 so'm</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-sm text-gray-500 mb-4 ml-[5px]">
+            PREMIUM REJANI TANLAB, SIZ QUYIDAGI IMKONIYATLARGA EGA BO'LASIZ:
+        </div>
+
+        <div id="features-list" class="space-y-3">
+            <div class="bg-gray-50 p-4 rounded-[1rem] feature-item">
+                <div class="flex items-center justify-between group cursor-pointer" onclick="toggleFeatureInfo(this)">
+                    <div class="flex items-center gap-3">
+                        <div class="w-6 h-6 text-purple-600 feature-icon">📈</div>
+                        <div>
+                            <div class="font-medium feature-title">Qidiruvda yuqori natijalar!</div>
+                            <div class="text-sm text-gray-500 feature-description">Qidiruvda yuqori o'rinlarda
+                                ko'rinasiz</div>
+                            <div class="hidden text-xs text-gray-400 mt-2 feature-info">
+                                Premium tarif orqali siz qidiruv natijalarida eng yuqori o'rinlarda joy olasiz
+                            </div>
+                        </div>
+                    </div>
+                    <span class="text-xs text-orange-600 bg-orange-100 px-2 py-1 rounded feature-badge">Premium</span>
+                </div>
+            </div>
+            <!-- Add more features similarly -->
+            <div class="bg-gray-50 p-4 rounded-[1rem] feature-item">
+                <div class="flex items-center justify-between group cursor-pointer" onclick="toggleFeatureInfo(this)">
+                    <div class="flex items-center gap-3">
+                        <div class="w-6 h-6 text-purple-600 feature-icon">🌐</div>
+                        <div>
+                            <div class="font-medium feature-title">Websaytni qoshish mumkun!</div>
+                            <div class="text-sm text-gray-500 feature-description">Saytingizga havola qo'shish
+                                imkoniyati.</div>
+                            <div class="hidden text-xs text-gray-400 mt-2 feature-info">
+                                Har bir e'lonizga 5 tagacha sifatli rasm qo'shish imkoniyati
+                            </div>
+                        </div>
+                    </div>
+                    <span class="text-xs text-orange-600 bg-orange-100 px-2 py-1 rounded feature-badge">Premium</span>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-4 rounded-[1rem] feature-item">
+                <div class="flex items-center justify-between group cursor-pointer" onclick="toggleFeatureInfo(this)">
+                    <div class="flex items-center gap-3">
+                        <div class="w-6 h-6 text-purple-600 feature-icon">🔥</div>
+                        <div>
+                            <div class="font-medium feature-title">4ta gach ijtimoiy tarmoq!</div>
+                            <div class="text-sm text-gray-500 feature-description">4 ta ijtimoiy tarmoqni bog'lash.
+                            </div>
+                            <div class="hidden text-xs text-gray-400 mt-2 feature-info">
+                                Har bir e'lonizga 5 tagacha sifatli rasm qo'shish imkoniyati
+                            </div>
+                        </div>
+                    </div>
+                    <span class="text-xs text-orange-600 bg-orange-100 px-2 py-1 rounded feature-badge">Premium</span>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-4 rounded-[1rem] feature-item">
+                <div class="flex items-center justify-between group cursor-pointer" onclick="toggleFeatureInfo(this)">
+                    <div class="flex items-center gap-3">
+                        <div class="w-6 h-6 text-purple-600 feature-icon">📖</div>
+                        <div>
+                            <div class="font-medium feature-title">Tafsifda 400ta gacha belgilar!</div>
+                            <div class="text-sm text-gray-500 feature-description">400 ta belgigacha matn qo'shing.
+                            </div>
+                            <div class="hidden text-xs text-gray-400 mt-2 feature-info">
+                                Har bir e'lonizga 5 tagacha sifatli rasm qo'shish imkoniyati
+                            </div>
+                        </div>
+                    </div>
+                    <span class="text-xs text-orange-600 bg-orange-100 px-2 py-1 rounded feature-badge">Premium</span>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-4 rounded-[1rem] feature-item">
+                <div class="flex items-center justify-between group cursor-pointer" onclick="toggleFeatureInfo(this)">
+                    <div class="flex items-center gap-3">
+                        <div class="w-6 h-6 text-purple-600 feature-icon">☎️</div>
+                        <div>
+                            <div class="font-medium feature-title">3ta telefon ragam</div>
+                            <div class="text-sm text-gray-500 feature-description">3 ta telefon raqam kiritish.</div>
+                            <div class="hidden text-xs text-gray-400 mt-2 feature-info">
+                                Har bir e'lonizga 5 tagacha sifatli rasm qo'shish imkoniyati
+                            </div>
+                        </div>
+                    </div>
+                    <span class="text-xs text-orange-600 bg-orange-100 px-2 py-1 rounded feature-badge">Premium</span>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-4 rounded-[1rem] feature-item">
+                <div class="flex items-center justify-between group cursor-pointer" onclick="toggleFeatureInfo(this)">
+                    <div class="flex items-center gap-3">
+                        <div class="w-6 h-6 text-purple-600 feature-icon">🖼️</div>
+                        <div>
+                            <div class="font-medium feature-title">5ta elon yaratish rasmi</div>
+                            <div class="text-sm text-gray-500 feature-description">5 ta rasm qo'shish imkoniyati</div>
+                            <div class="hidden text-xs text-gray-400 mt-2 feature-info">
+                                Har bir e'lonizga 5 tagacha sifatli rasm qo'shish imkoniyati
+                            </div>
+                        </div>
+                    </div>
+                    <span class="text-xs text-orange-600 bg-orange-100 px-2 py-1 rounded feature-badge">Premium</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/js/selectPlan.js"></script>
+</body>
+</html>

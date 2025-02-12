@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tips</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+   
+</head>
+<body>
+    <!-- Status Bar -->
+    <div class="status-bar flex items-center justify-between">
+        <span>23:16</span>
+        <div class="flex items-center space-x-4">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.72 10c0 4.3-3.51 7.8-7.81 7.8-1.29 0-2.51-.32-3.58-.88L2 18.92l2-5.33c-.56-1.07-.88-2.29-.88-3.58 0-4.3 3.51-7.8 7.81-7.8s7.79 3.5 7.79 7.79z"/>
+            </svg>
+            <svg class="w-5 h-4" viewBox="0 0 24 18" fill="currentColor">
+                <path d="M24 18h-8v-2h8v2zm0-4h-8v-2h8v2zm0-4h-8V8h8v2zm0-4h-8V4h8v2zm0-4h-8V0h8v2z"/>
+            </svg>
+            <div class="w-6 h-3 bg-red-500 rounded-full"></div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <h1 class="page-title">Tips</h1>
+
+        <!-- Search Bar -->
+        <div class="search-bar flex items-center">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+            <span class="text-[17px]">Search</span>
+            <svg class="w-4 h-4 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+            </svg>
+        </div>
+
+        <!-- Banner -->
+        <div class="banner">
+            <h2 class="banner-title">Navigate your iPhone</h2>
+            <img src="/api/placeholder/180/360" alt="iPhone" class="absolute right-6 top-1/2 transform -translate-y-1/2 w-24">
+        </div>
+
+        <!-- Get Started Section -->
+        <section>
+            <h2 class="section-title">Get Started</h2>
+            <div class="card">
+                <div class="card-item">
+                    <svg class="icon text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span class="item-text">Setup checklist</span>
+                    <span class="badge">2</span>
+                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </div>
+                <div class="card-item">
+                    <svg class="icon text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"/>
+                    </svg>
+                    <span class="item-text">Practice key gestures</span>
+                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- What's New Section -->
+        <section>
+            <h2 class="section-title">What's New</h2>
+            <div class="card">
+                <div class="card-item">
+                    <svg class="icon text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                    </svg>
+                    <span class="item-text">What's new in iOS 18</span>
+                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Discover More Section -->
+        <section>
+            <h2 class="section-title">Discover More</h2>
+            <div class="card">
+                <div class="card-item">
+                    <svg class="icon text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                    <span class="item-text">Photos & Camera</span>
+                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </div>
+                <div class="card-item">
+                    <svg class="icon text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                    </svg>
+                    <span class="item-text">Personalize your iPhone</span>
+                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </div>
+                <div class="card-item">
+                    <svg class="icon text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                    <span class="item-text">Genius Picks</span>
+                    <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Your Devices Section -->
+        <section>
+            <h2 class="section-title">Your Devices</h2>
+        </section>
+    </div>
+</body>
+</html>

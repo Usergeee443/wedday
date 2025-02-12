@@ -178,9 +178,20 @@ body {
     overflow: hidden;
 }
 
+
 .ios-list-item {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
     cursor: pointer;
+}
+
+.ios-list-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 40px; /* Apple uslubida chap tomonda bo‘sh joy qoldirish */
+    width: calc(100% - 22px); /* Eni: chap va o‘ngdan bo‘sh joy qoldirish */
+    height: 0.1px;
+    background: rgba(0, 0, 0, 0.15); /* Apple’dagi chiziq ohangida */
 }
 
 .ios-list-item:last-child {
@@ -215,3 +226,28 @@ body {
 
 
 
+
+.apple-button {
+    background: #0071e3;
+    border-radius: 980px;
+    padding: 8px 16px;
+    transition: all 0.3s;
+}
+.apple-button:hover {
+    background: #0077ED;
+}
+.faq-section {
+    background: #fbfbfd;
+}
+.contact-input {
+    font-size: 17px;
+    line-height: 1.23536;
+    border-radius: 12px;
+}
+.help-card {
+    border-radius: 18px;
+    transition: all 0.3s ease;
+}
+.help-card:hover {
+    transform: scale(1.02);
+}
