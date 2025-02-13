@@ -27,92 +27,86 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <style>
+        .main-logo {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+        
+        .main-logo.scrolled {
+            opacity: 0;
+        }
+        
+        .header-nav {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
+        }
+        
+        .header-nav.visible {
+            opacity: 1;
+        }
+        
+        .header-logo {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .header-nav.visible .header-logo {
+            opacity: 1;
+        }
+
+        /* Hide header initially */
+        .header-hidden {
+            transform: translateY(-100%);
+        }
+    </style>
 </head>
 
 
 <body class="font-sans bg-gray">
     <!-- Navigation -->
-    <nav class="glass-effect fixed w-full z-50 px-6 py-4 flex justify-between items-center border-b border-gray-200/30 backdrop-blur-md">
-        <div class="text-[#1D1D1F] font-semibold text-xl">wedday</div>
-        <button onclick="openModal()" 
-                class="text-sm font-medium text-[#0066CC] hover:text-[#0A84FF] transition-colors duration-300">
-            Yuklab olish
-        </button>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="flex-1 pt-24 px-6">
-        <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between py-20">
-            <!-- Text Content -->
-            <div class="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0">
-                <h1 class="text-5xl lg:text-6xl font-semibold text-[#1D1D1F] tracking-tight leading-tight mb-6">
-                    Discover a New Way to Connect
-                </h1>
-                <p class="text-xl text-[#86868B] mb-8 leading-relaxed">
-                    Experience seamless integration and elegant design in every interaction.
-                </p>
-                <button onclick="openModal()" 
-                        class="download-btn bg-[#007AFF] text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-[#0A84FF] transition-colors duration-300 shadow-lg hover:shadow-xl">
-                    Download Now
-                </button>
-            </div>            
+    <div class="relative">
+        <!-- Large initial logo -->
+        <div class="main-logo">
+            <h1 class="text-[#1D1D1F] text-4xl font-semibold">wedday</h1>
         </div>
-    </section>
-
-    <!-- Modal -->
-    <div id="downloadModal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-md">
-        <div class="p-6 bg-white max-w-md w-full mx-4 rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-300 ease-out">
-            <!-- Sarlavha va Yopish Tugmasi -->
-            <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-bold text-[#1D1D1F]">Ilovani yuklab oling</h2>
-                <button onclick="closeModal()" 
-                        class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors duration-200">
-                    <i class="fas fa-times text-[#86868B]"></i>
-                </button>
-            </div>
-    
-            <!-- QR Code -->
-            <div class="mb-6">
-                <div class="bp-4">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://example.com" 
-                         alt="QR Code"
-                         class="w-40 h-40 mx-auto">
-                    <p class="text-center text-sm text-[#86868B] mt-3">
-                        Yuklab olish uchun skanerlash
-                    </p>
+        
+        <!-- Apple-style header -->
+        <nav class="header-nav fixed w-full z-50 border-b border-gray-200/30 border-b">
+            <div class="max-w-[980px] mx-auto px-6 py-3 border-b border-black/10">
+                <div class="header-logo text-[#1D1D1F] font-semibold text-lg text-center">
+                    wedday
                 </div>
             </div>
-    
-            <!-- Store Buttons -->
-            <div class="space-y-4">
-                <a href="#" class="store-btn block w-full bg-[#007AFF] text-white py-3 px-6 rounded-xl flex items-center justify-center space-x-3 hover:bg-[#0A84FF] transition-all duration-200 hover:shadow-md">
-                    <i class="fab fa-apple text-xl"></i>
-                    <span class="font-medium">App Store</span>
-                </a>
-                <a href="#" class="store-btn block w-full bg-[#1A73E8] text-white py-3 px-6 rounded-xl flex items-center justify-center space-x-3 hover:bg-[#1B66C9] transition-all duration-200 hover:shadow-md">
-                    <i class="fab fa-google-play text-xl"></i>
-                    <span class="font-medium">Google Play</span>
-                </a>
-            </div>
-        </div>
+        </nav>
     </div>
 
 
 
-    <div class="container mx-auto px-4 lg:px-0">
+    <div class="container mx-auto px-4 lg:px-0  pt-24">
+        
+        <div class="bg-white rounded-[10px] shadow-sm py-[7rem]"></div>
+
         <!-- WeDay Section -->
         <div class="ios-group">
-            <div class="ios-group-label text-gray-500 px-4">ILOVANING MOHIYATI</div>
+            <div class="ios-group-label text-gray-500 px-[16.5px]">ILOVANING MOHIYATI</div>
             <div class="ios-list shadow-sm">
                 <div class="ios-list-item" onclick="toggleContent(this)">
                     <div class="flex items-center p-2">
                         <div
-                            class="w-6 h-6 rounded-lg bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white text-sm mr-3">
+                            class="w-5 h-5 rounded-[5px] bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white text-[12px] mr-4 ml-2">
                             W</div>
                         <div class="flex-grow">
                             <div class="text-base">WeDay</div>
                         </div>
-                        <svg class="ios-chevron w-4 h-4 text-gray-400" fill="none" stroke="currentColor"
+                        <svg class="ios-chevron w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                         </svg>
@@ -126,40 +120,35 @@
                     </div>
                 </div>
                 
-                <div class="ios-list-item" onclick="toggleContent(this)">
-                    <div class="flex items-center p-2">
-                        <div
-                            class="w-6 h-6 rounded-lg bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white text-sm mr-3">
-                            W</div>
-                        <div class="flex-grow">
-                            <div class="text-base">WeDay</div>
-                        </div>
-                        <svg class="ios-chevron w-4 h-4 text-gray-400" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </div>
-                    <div class="content-area">
-                        <div class="p-4 text-gray-600">
-                            WeDay innovatsion hamkorlik platformasi bo'lib, yaratuvchilar va foydalanuvchilar o'rtasida
-                            o'zaro foydali aloqalar o'rnatishga yordam beradi. Platforma kontentni yaratish, tarqatish
-                            va monetizatsiya qilishning yangi, samarali modelini taqdim etadi.
+                <a href="/index.html">
+                    <div class="ios-list-item">
+                        <div class="flex items-center p-2">
+                            <div
+                                class="w-5 h-5 rounded-[5px] bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white text-[12px] mr-4 ml-2">
+                                W</div>
+                            <div class="flex-grow">
+                                <div class="text-base">WeDay</div>
+                            </div>
+                            <svg class="ios-chevron w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
                         </div>
                     </div>
-                </div>
+                </a>
                 
             </div>
         </div>
 
         <!-- Target Users Section -->
         <div class="ios-group">
-            <div class="ios-group-label text-gray-500 px-4">KIMLAR UCHUN</div>
+            <div class="ios-group-label text-gray-500 px-[16.5px]">KIMLAR UCHUN</div>
             <div class="ios-list shadow-sm">
                 <div class="ios-list-item" onclick="toggleContent(this)">
                     <div class="flex items-center p-2">
-                        <span class="text-lg mr-3">👤</span>
+                        <span class="text-lg mr-4 ml-2">👤</span>
                         <span class="flex-grow">Kontent yaratuvchilar</span>
-                        <svg class="ios-chevron w-4 h-4 text-gray-400" fill="none" stroke="currentColor"
+                        <svg class="ios-chevron w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                         </svg>
@@ -174,9 +163,9 @@
 
                 <div class="ios-list-item" onclick="toggleContent(this)">
                     <div class="flex items-center p-2">
-                        <span class="text-lg mr-3">🚀</span>
+                        <span class="text-lg mr-4 ml-2">🚀</span>
                         <span class="flex-grow">Startap asoslanchilari</span>
-                        <svg class="ios-chevron w-4 h-4 text-gray-400" fill="none" stroke="currentColor"
+                        <svg class="ios-chevron w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                         </svg>
@@ -191,9 +180,9 @@
 
                 <div class="ios-list-item" onclick="toggleContent(this)">
                     <div class="flex items-center p-2">
-                        <span class="text-lg mr-3">🚀</span>
+                        <span class="text-lg mr-4 ml-2">🚀</span>
                         <span class="flex-grow">Startap asoslanchilari</span>
-                        <svg class="ios-chevron w-4 h-4 text-gray-400" fill="none" stroke="currentColor"
+                        <svg class="ios-chevron w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                         </svg>
@@ -208,9 +197,9 @@
 
                 <div class="ios-list-item" onclick="toggleContent(this)">
                     <div class="flex items-center p-2">
-                        <span class="text-lg mr-3">🚀</span>
+                        <span class="text-lg mr-4 ml-2">🚀</span>
                         <span class="flex-grow">Startap asoslanchilari</span>
-                        <svg class="ios-chevron w-4 h-4 text-gray-400" fill="none" stroke="currentColor"
+                        <svg class="ios-chevron w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                         </svg>
@@ -229,15 +218,15 @@
 
         <!-- Features Section -->
         <div class="ios-group">
-            <div class="ios-group-label text-gray-500 px-4">IMKONIYATLAR</div>
+            <div class="ios-group-label text-gray-500 px-[16.5px]">IMKONIYATLAR</div>
             <div class="ios-list shadow-sm">
                 <div class="ios-list-item" onclick="toggleContent(this)">
                     <div class="flex items-center p-2">
-                        <span class="text-lg mr-3">💰</span>
+                        <span class="text-lg mr-4 ml-2">💰</span>
                         <div class="flex-grow">
                             <div>Monetizatsiya</div>
                         </div>
-                        <svg class="ios-chevron w-5 h-5 text-gray-400" fill="none" stroke="currentColor"
+                        <svg class="ios-chevron w-4 h-4 text-gray-400" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                         </svg>
@@ -257,11 +246,11 @@
 
                 <div class="ios-list-item" onclick="toggleContent(this)">
                     <div class="flex items-center p-2">
-                        <span class="text-lg mr-3">💰</span>
+                        <span class="text-lg mr-4 ml-2">💰</span>
                         <div class="flex-grow">
                             <div>Monetizatsiya</div>
                         </div>
-                        <svg class="ios-chevron w-5 h-5 text-gray-400" fill="none" stroke="currentColor"
+                        <svg class="ios-chevron w-4 h-4 text-gray-400" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                         </svg>
@@ -281,11 +270,11 @@
 
                 <div class="ios-list-item" onclick="toggleContent(this)">
                     <div class="flex items-center p-2">
-                        <span class="text-lg mr-3">💰</span>
+                        <span class="text-lg mr-4 ml-2">💰</span>
                         <div class="flex-grow">
                             <div>Monetizatsiya</div>
                         </div>
-                        <svg class="ios-chevron w-5 h-5 text-gray-400" fill="none" stroke="currentColor"
+                        <svg class="ios-chevron w-4 h-4 text-gray-400" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                         </svg>
@@ -305,11 +294,11 @@
 
                 <div class="ios-list-item" onclick="toggleContent(this)">
                     <div class="flex items-center p-2">
-                        <span class="text-lg mr-3">💰</span>
+                        <span class="text-lg mr-4 ml-2">💰</span>
                         <div class="flex-grow">
                             <div>Monetizatsiya</div>
                         </div>
-                        <svg class="ios-chevron w-5 h-5 text-gray-400" fill="none" stroke="currentColor"
+                        <svg class="ios-chevron w-4 h-4 text-gray-400" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                         </svg>
@@ -329,159 +318,95 @@
 
                 <!-- More features items... -->
             </div>
+
+            <div class="ios-group">
+                <div class="ios-group-label text-gray-500 px-[16.5px]">ALOQA</div>
+                <div class="ios-list shadow-sm">
+    
+                    <a href="/pages/call.html">
+                        <div class="ios-list-item">
+                            <div class="flex items-center p-2">
+                                <span class="text-lg mr-4 ml-2">📞</span>
+                                <div class="flex-grow">
+                                    <div>Bog'lanish</div>
+                                </div>
+                                <svg class="ios-chevron w-4 h-4 text-gray-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="">
+                        <div class="ios-list-item">
+                            <div class="flex items-center p-2">
+                                <span class="text-lg mr-4 ml-2">✉️</span>
+                                <div class="flex-grow">
+                                    <div>Xabar yuborish</div>
+                                </div>
+                                <svg class="ios-chevron w-4 h-4 text-gray-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="">
+                        <div class="ios-list-item">
+                            <div class="flex items-center p-2">
+                                <span class="text-lg mr-4 ml-2">💬</span>
+                                <div class="flex-grow">
+                                    <div>wedday chat</div>
+                                </div>
+                                <svg class="ios-chevron w-4 h-4 text-gray-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+
+                        
+                </div>
+
+                <div class="ios-group">
+                    <div class="ios-list">                    
+                        <div class="flex items-center justify-center text-center p-[12px] text-[13px] text-gray-500">
+                            <div>&copy; 2025 Barcha huquqlar himoyalangan</div>
+                        </div>                        
+                    </div>
+                </div>
         </div>
     </div>
 
 
-
-
-    <!-- 5. Statistics Section -->
-    <section class="py-6 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-                <div class="group p-6 rounded-xl bg-gray-100 hover:bg-gray-200 transition-all duration-300">
-                    <div data-target="10000" class="counter text-5xl md:text-6xl font-semibold text-gray-800"> 10k+
-                    </div>
-                    <div class="text-gray-600 mt-2 text-sm md:text-base font-medium">Downloads</div>
-                </div>
-                <div class="group p-6 rounded-xl bg-gray-100 hover:bg-gray-200 transition-all duration-300">
-                    <div data-target="4.8" class="counter text-5xl md:text-6xl font-semibold text-gray-800"> 4.8 </div>
-                    <div class="text-gray-600 mt-2 text-sm md:text-base font-medium">Average Rating</div>
-                </div>
-                <div class="group p-6 rounded-xl bg-gray-100 hover:bg-gray-200 transition-all duration-300">
-                    <div data-target="1000" class="counter text-5xl md:text-6xl font-semibold text-gray-800"> 1000+
-                    </div>
-                    <div class="text-gray-600 mt-2 text-sm md:text-base font-medium">Advertisements</div>
-                </div>
-                <div class="group p-6 rounded-xl bg-gray-100 hover:bg-gray-200 transition-all duration-300">
-                    <div class="text-5xl md:text-6xl font-semibold text-gray-800"> 24/7 </div>
-                    <div class="text-gray-600 mt-2 text-sm md:text-base font-medium">Support</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    
-
-
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-[#1D1D1F]">Ko'p so'raladigan savollar</h2>
-            <div class="max-w-2xl mx-auto space-y-4">
-                <!-- FAQ 1 -->
-                <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
-                    <button class="faq-btn w-full text-left p-6 font-medium flex justify-between items-center hover:bg-gray-50">
-                        <span class="text-[#1D1D1F]">Ilovadan foydalanish pullikmi?</span>
-                        <iconify-icon icon="carbon:chevron-down" class="faq-icon text-[#86868B] transition-transform duration-300" width="24" height="24"></iconify-icon>
-                    </button>
-                    <div class="faq-answer hidden p-6 border-t bg-gray-50 text-[#86868B]">
-                        <p>Asosiy funksiyalar bepul, qo'shimcha imkoniyatlar uchun to'lov mavjud. Siz ilovaning asosiy xususiyatlaridan mutlaqo bepul foydalanishingiz mumkin.</p>
-                    </div>
-                </div>
-    
-                <!-- FAQ 2 -->
-                <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
-                    <button class="faq-btn w-full text-left p-6 font-medium flex justify-between items-center hover:bg-gray-50">
-                        <span class="text-[#1D1D1F]">Internet kerakmi?</span>
-                        <iconify-icon icon="carbon:chevron-down" class="faq-icon text-[#86868B] transition-transform duration-300" width="24" height="24"></iconify-icon>
-                    </button>
-                    <div class="faq-answer hidden p-6 border-t bg-gray-50 text-[#86868B]">
-                        <p>Ba'zi funksiyalar oflayn ishlaydi, to'liq funksionallik uchun internet kerak. Asosiy vazifalarni internetga ulanmasdan ham bajara olasiz.</p>
-                    </div>
-                </div>
-    
-                <!-- FAQ 3 -->
-                <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
-                    <button class="faq-btn w-full text-left p-6 font-medium flex justify-between items-center hover:bg-gray-50">
-                        <span class="text-[#1D1D1F]">Qanday qurilmalar qo'llab-quvvatlanadi?</span>
-                        <iconify-icon icon="carbon:chevron-down" class="faq-icon text-[#86868B] transition-transform duration-300" width="24" height="24"></iconify-icon>
-                    </button>
-                    <div class="faq-answer hidden p-6 border-t bg-gray-50 text-[#86868B]">
-                        <p>Android 8.0+ va iOS 13+ versiyalarida ishlaydigan smartfonlar va planshetlar uchun mo'ljallangan.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Help Section -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6 max-w-5xl">
-            <h2 class="text-5xl font-semibold text-center mb-16">Yordam</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="help-card bg-[#fbfbfd] p-8 text-center">
-                    <svg class="w-12 h-12 mx-auto mb-6 text-[#0071e3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-                    </svg>
-                    <h3 class="text-2xl font-semibold mb-3">Online Chat</h3>
-                    <p class="text-gray-500 text-lg">24/7 Live Chat Support</p>
-                </div>
-
-                <!-- Other help cards with similar structure -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="py-20 bg-[#fbfbfd]">
-        <div class="container mx-auto px-6 max-w-5xl">
-            <h2 class="text-5xl font-semibold text-center mb-16">Bog'lanish</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-                <div class="space-y-8">
-                    <div>
-                        <h3 class="text-xl font-semibold mb-2">Manzil</h3>
-                        <p class="text-gray-500 text-lg">Samarqand viloyati, Urgut tumani, Gus</p>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold mb-2">Telefon</h3>
-                        <p class="text-gray-500 text-lg">+998 91 545 77 33</p>
-                        <p class="text-gray-500 text-lg">+998 88 611 61 65</p>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold mb-2">Email</h3>
-                        <p class="text-gray-500 text-lg">info@wedday.uz</p>
-                    </div>
-                </div>
-
-                <form class="space-y-6">
-                    <input type="text" placeholder="Ismingiz" class="contact-input w-full p-4 bg-white border border-gray-200 focus:border-[#0071e3] focus:ring-1 focus:ring-[#0071e3] outline-none">
-                    <input type="email" placeholder="Email" class="contact-input w-full p-4 bg-white border border-gray-200 focus:border-[#0071e3] focus:ring-1 focus:ring-[#0071e3] outline-none">
-                    <textarea placeholder="Xabar" class="contact-input w-full p-4 bg-white border border-gray-200 focus:border-[#0071e3] focus:ring-1 focus:ring-[#0071e3] outline-none h-32"></textarea>
-                    <button class="apple-button text-white text-lg w-full py-4">Yuborish</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-[#f5f5f7] py-16">
-        <div class="container mx-auto px-6 max-w-5xl">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-                <div>
-                    <h3 class="text-sm font-semibold mb-4">Kompaniya</h3>
-                    <ul class="space-y-3">
-                        <li><a href="/pages/about.html" class="text-gray-500 hover:text-gray-700 text-sm">Biz haqimizda</a></li>
-                        <li><a href="/pages/blog.html" class="text-gray-500 hover:text-gray-700 text-sm">Blog</a></li>
-                    </ul>
-                </div>
-                <!-- Other footer columns -->
-            </div>
-            <div class="border-t border-gray-300 pt-8">
-                <p class="text-center text-sm text-gray-500">&copy; 2025 Barcha huquqlar himoyalangan</p>
-            </div>
-        </div>
-    </footer>
 </body>
+<script>
+    const mainLogo = document.querySelector('.main-logo');
+    const header = document.querySelector('.header-nav');
+    let lastScroll = 0;
+    
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.scrollY;
+        const threshold = 20;
+        
+        if (currentScroll > threshold) {
+            mainLogo.classList.add('scrolled');
+            header.classList.add('visible');
+        } else {
+            mainLogo.classList.remove('scrolled');
+            header.classList.remove('visible');
+        }
+        
+        lastScroll = currentScroll;
+    });
+</script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-    <script src="/js/downloadmodal.js"></script>
-    <script src="/js/faqs.js"></script>
-    <script src="/js/ourAchievements.js"></script>
-    <script src="/js/stats.js"></script>
-    <script src="/js/about.js"></script>
 
+    <script src="/js/about.js"></script>
 </body>
 
 </html>

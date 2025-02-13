@@ -4,19 +4,17 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
     background-color: #F2F2F7;
+
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
 }
 
-
-
-
-.scrollbar-hide::-webkit-scrollbar {
+body::-webkit-scrollbar {
     display: none;
+    /* Scroll barni yashirish */
 }
 
-.scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
 
 @media (max-width: 640px) {
     .responsive-flex {
@@ -188,7 +186,7 @@ body {
     content: "";
     position: absolute;
     bottom: 0;
-    left: 40px; /* Apple uslubida chap tomonda bo‘sh joy qoldirish */
+    left: 50px; /* Apple uslubida chap tomonda bo‘sh joy qoldirish */
     width: calc(100% - 22px); /* Eni: chap va o‘ngdan bo‘sh joy qoldirish */
     height: 0.1px;
     background: rgba(0, 0, 0, 0.15); /* Apple’dagi chiziq ohangida */
