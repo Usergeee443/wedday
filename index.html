@@ -52,6 +52,16 @@
         .header-hidden {
             transform: translateY(-100%);
         }
+
+        .ios-list-item::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50px; /* Apple uslubida chap tomonda bo‘sh joy qoldirish */
+            width: calc(100% - 22px); /* Eni: chap va o‘ngdan bo‘sh joy qoldirish */
+            height: 0.1px;
+            background: rgba(0, 0, 0, 0.15); /* Apple’dagi chiziq ohangida */
+        }
     </style>
 </head>
 
@@ -410,7 +420,7 @@
             <div class="ios-group">
                 <div class="ios-list">                    
                     <div class="flex items-center justify-center text-center p-[12px] text-[13px] text-gray-500">
-                        <div>&copy; 2025 Barcha huquqlar himoyalangan 2</div>
+                        <div>&copy; 2025 Barcha huquqlar himoyalangan 3</div>
                     </div>                        
                 </div>
             </div>

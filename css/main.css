@@ -39,16 +39,11 @@ body::-webkit-scrollbar {
     cursor: pointer;
 }
 
-.ios-list-item::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50px; /* Apple uslubida chap tomonda bo‘sh joy qoldirish */
-    width: calc(100% - 22px); /* Eni: chap va o‘ngdan bo‘sh joy qoldirish */
-    height: 0.1px;
-    background: rgba(0, 0, 0, 0.15); /* Apple’dagi chiziq ohangida */
-}
 
+
+.ios-list-item:last-child {
+    border-bottom: none;
+}
 
 .ios-chevron {
     transition: transform 0.3s ease;

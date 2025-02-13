@@ -101,6 +101,16 @@
             transform: rotate(45deg);
             margin-right: 2px;
         }
+
+        .ios-list-item::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50px; /* Apple uslubida chap tomonda bo‘sh joy qoldirish */
+            width: calc(100% - 22px); /* Eni: chap va o‘ngdan bo‘sh joy qoldirish */
+            height: 0.1px;
+            background: rgba(0, 0, 0, 0.15); /* Apple’dagi chiziq ohangida */
+        }
     </style>
 </head>
 
