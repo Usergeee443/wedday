@@ -49,9 +49,6 @@ body::-webkit-scrollbar {
     background: rgba(0, 0, 0, 0.15); /* Apple’dagi chiziq ohangida */
 }
 
-.ios-list-item:last-child {
-    border-bottom: none;
-}
 
 .ios-chevron {
     transition: transform 0.3s ease;
