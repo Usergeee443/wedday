@@ -41,16 +41,16 @@
         }
         
         .header-nav {
-            background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             opacity: 0;
             transition: opacity 0.3s ease;
-            border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
         }
         
         .header-nav.visible {
             opacity: 1;
+            border-bottom: 0.1px solid rgba(0, 0, 0, 0.171);
+
         }
         
         .header-logo {
@@ -80,7 +80,7 @@
         
         <!-- Apple-style header -->
         <nav class="header-nav fixed w-full z-50 border-b border-gray-200/30 border-b">
-            <div class="max-w-[980px] mx-auto px-6 py-3 border-b border-black/10">
+            <div class="max-w-[980px] mx-auto px-6 py-3">
                 <div class="header-logo text-[#1D1D1F] font-semibold text-lg text-center">
                     wedday
                 </div>
@@ -94,18 +94,16 @@
         
         <div class="bg-white rounded-[10px] shadow-sm py-[7rem]"></div>
 
-        <!-- WeDay Section -->
+
+
+        <!-- Target Users Section -->
         <div class="ios-group">
-            <div class="ios-group-label text-gray-500 px-[16.5px]">ILOVANING MOHIYATI</div>
+            <div class="ios-group-label text-gray-500 px-[16.5px]">WEDDAY</div>
             <div class="ios-list shadow-sm">
                 <div class="ios-list-item" onclick="toggleContent(this)">
                     <div class="flex items-center p-2">
-                        <div
-                            class="w-5 h-5 rounded-[5px] bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white text-[12px] mr-4 ml-2">
-                            W</div>
-                        <div class="flex-grow">
-                            <div class="text-base">WeDay</div>
-                        </div>
+                        <span class="text-lg mr-4 ml-2">💫</span>
+                        <span class="flex-grow">Qisqa tanishuv</span>
                         <svg class="ios-chevron w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -113,41 +111,286 @@
                     </div>
                     <div class="content-area">
                         <div class="p-4 text-gray-600">
-                            WeDay innovatsion hamkorlik platformasi bo'lib, yaratuvchilar va foydalanuvchilar o'rtasida
-                            o'zaro foydali aloqalar o'rnatishga yordam beradi. Platforma kontentni yaratish, tarqatish
-                            va monetizatsiya qilishning yangi, samarali modelini taqdim etadi.
+                            Tez kunda...
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ios-list-item" onclick="toggleContent(this)">
+                    <div class="flex items-center p-2">
+                        <span class="text-lg mr-4 ml-2">🏆</span>
+                        <span class="flex-grow">Ilovaning afzalliklari</span>
+                        <svg class="ios-chevron w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                    <div class="content-area">
+                        <div class="p-4 text-gray-600">
+                            Tez kunda...
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ios-list-item" onclick="toggleContent(this)">
+                    <div class="flex items-center p-2">
+                        <span class="text-lg mr-4 ml-2">📥</span>
+                        <span class="flex-grow">Yuklab olish</span>
+                        <svg class="ios-chevron w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                    <div class="content-area">
+                        <div class="p-4 text-gray-600">
+                            Tez kunda...
                         </div>
                     </div>
                 </div>
                 
-                <a href="/index.html">
+            </div>
+        </div>
+
+
+
+
+        <!-- Target Users Section -->
+        <div class="ios-group">
+            <div class="ios-group-label text-gray-500 px-[16.5px]">FOYDALANUVCHILAR UCHUN</div>
+            <div class="ios-list shadow-sm">
+                <div class="ios-list-item" onclick="toggleContent(this)">
+                    <div class="flex items-center p-2">
+                        <span class="text-lg mr-4 ml-2">⚡</span>
+                        <span class="flex-grow">Qanday ishlaydi ?</span>
+                        <svg class="ios-chevron w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                    <div class="content-area">
+                        <div class="p-4 text-gray-600">
+                            Tez kunda...
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ios-list-item" onclick="toggleContent(this)">
+                    <div class="flex items-center p-2">
+                        <span class="text-lg mr-4 ml-2">❓</span>
+                        <span class="flex-grow">Tez-tez so‘raladigan savollar (FAQ)</span>
+                        <svg class="ios-chevron w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                    <div class="content-area">
+                        <div class="p-4 text-gray-600">
+                            Tez kunda...
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+
+
+
+        <!-- Target Users Section -->
+        <div class="ios-group">
+            <div class="ios-group-label text-gray-500 px-[16.5px]">Xizmat ko‘rsatuvchilar uchun</div>
+            <div class="ios-list shadow-sm">
+                <div class="ios-list-item" onclick="toggleContent(this)">
+                    <div class="flex items-center p-2">
+                        <span class="text-lg mr-4 ml-2">📋</span>
+                        <span class="flex-grow">Xizmat qo‘shish tartibi</span>
+                        <svg class="ios-chevron w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                    <div class="content-area">
+                        <div class="p-4 text-gray-600">
+                            Tez kunda...
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ios-list-item" onclick="toggleContent(this)">
+                    <div class="flex items-center p-2">
+                        <span class="text-lg mr-4 ml-2">💎</span>
+                        <span class="flex-grow">Premium imkoniyatlar</span>
+                        <svg class="ios-chevron w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                    <div class="content-area">
+                        <div class="p-4 text-gray-600">
+                            Tez kunda...
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ios-list-item" onclick="toggleContent(this)">
+                    <div class="flex items-center p-2">
+                        <span class="text-lg mr-4 ml-2">🔥</span>
+                        <span class="flex-grow">Reklama</span>
+                        <svg class="ios-chevron w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                    <div class="content-area">
+                        <div class="p-4 text-gray-600">
+                            Tez kunda...
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ios-list-item" onclick="toggleContent(this)">
+                    <div class="flex items-center p-2">
+                        <span class="text-lg mr-4 ml-2">📊</span>
+                        <span class="flex-grow">Tez-tez so‘raladigan savollar (FAQ)</span>
+                        <svg class="ios-chevron w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                    <div class="content-area">
+                        <div class="p-4 text-gray-600">
+                            Tez kunda...
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <!-- Target Users Section -->
+        <div class="ios-group">
+            <div class="ios-group-label text-gray-500 px-[16.5px]">BLOG VA YANGILIKLAR</div>
+            <div class="ios-list shadow-sm">
+                <div class="ios-list-item" onclick="toggleContent(this)">
+                    <div class="flex items-center p-2">
+                        <span class="text-lg mr-4 ml-2">💍</span>
+                        <span class="flex-grow">To‘y va tadbirlar bo‘yicha maslahatlar</span>
+                        <svg class="ios-chevron w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                    <div class="content-area">
+                        <div class="p-4 text-gray-600">
+                            Tez kunda...
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ios-list-item" onclick="toggleContent(this)">
+                    <div class="flex items-center p-2">
+                        <span class="text-lg mr-4 ml-2">🆕</span>
+                        <span class="flex-grow">Ilova yangiliklari</span>
+                        <svg class="ios-chevron w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                    <div class="content-area">
+                        <div class="p-4 text-gray-600">
+                            Tez kunda...
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ios-list-item" onclick="toggleContent(this)">
+                    <div class="flex items-center p-2">
+                        <span class="text-lg mr-4 ml-2">🌟</span>
+                        <span class="flex-grow">Muvaffaqiyatli hikoyalar</span>
+                        <svg class="ios-chevron w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                    <div class="content-area">
+                        <div class="p-4 text-gray-600">
+                            Tez kunda...
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <!-- Target Users Section -->
+        <div class="ios-group">
+            <div class="ios-group-label text-gray-500 px-[16.5px]">HUQUQIY</div>
+            <div class="ios-list shadow-sm">
+                <div class="ios-list-item" onclick="toggleContent(this)">
+                    <div class="flex items-center p-2">
+                        <span class="text-lg mr-4 ml-2">📄</span>
+                        <span class="flex-grow">Foydalanish shartlari</span>
+                        <svg class="ios-chevron w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                    <div class="content-area">
+                        <div class="p-4 text-gray-600">
+                            Tez kunda...
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ios-list-item" onclick="toggleContent(this)">
+                    <div class="flex items-center p-2">
+                        <span class="text-lg mr-4 ml-2">🛡️</span>
+                        <span class="flex-grow">Maxfiylik siyosati</span>
+                        <svg class="ios-chevron w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                    <div class="content-area">
+                        <div class="p-4 text-gray-600">
+                            Tez kunda...
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        
+
+        <!-- Features Section -->
+        <div class="ios-group">
+            <div class="ios-group-label text-gray-500 px-[16.5px]">YORDAM</div>
+            <div class="ios-list shadow-sm">
+
+                <a href="/pages/call.html">
                     <div class="ios-list-item">
                         <div class="flex items-center p-2">
-                            <div
-                                class="w-5 h-5 rounded-[5px] bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white text-[12px] mr-4 ml-2">
-                                W</div>
+                            <span class="text-lg mr-4 ml-2">📞</span>
                             <div class="flex-grow">
-                                <div class="text-base">WeDay</div>
+                                <div>Bog'lanish</div>
                             </div>
-                            <svg class="ios-chevron w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor"
+                            <svg class="ios-chevron w-4 h-4 text-gray-400" fill="none" stroke="currentColor"
                                 viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                             </svg>
                         </div>
                     </div>
                 </a>
-                
-            </div>
-        </div>
 
-        <!-- Target Users Section -->
-        <div class="ios-group">
-            <div class="ios-group-label text-gray-500 px-[16.5px]">KIMLAR UCHUN</div>
-            <div class="ios-list shadow-sm">
                 <div class="ios-list-item" onclick="toggleContent(this)">
                     <div class="flex items-center p-2">
-                        <span class="text-lg mr-4 ml-2">👤</span>
-                        <span class="flex-grow">Kontent yaratuvchilar</span>
+                        <span class="text-lg mr-4 ml-2">💡</span>
+                        <span class="flex-grow">Umumiy Tez-tez so‘raladigan savollar</span>
                         <svg class="ios-chevron w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -155,229 +398,36 @@
                     </div>
                     <div class="content-area">
                         <div class="p-4 text-gray-600">
-                            Bloggerlar, vloggerlar, ta'lim kontenti yaratuvchilari va boshqa ijodkorlar uchun. Ular o'z
-                            auditoriyasini kengaytirish va daromad topish imkoniyatiga ega bo'ladilar.
+                            Tez kunda...
                         </div>
                     </div>
                 </div>
 
-                <div class="ios-list-item" onclick="toggleContent(this)">
-                    <div class="flex items-center p-2">
-                        <span class="text-lg mr-4 ml-2">🚀</span>
-                        <span class="flex-grow">Startap asoslanchilari</span>
-                        <svg class="ios-chevron w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </div>
-                    <div class="content-area">
-                        <div class="p-4 text-gray-600">
-                            Innovatsion g'oyalarni amalga oshirayotgan tadbirkorlar uchun. Platform orqali sarmoyadorlar
-                            va hamkorlar topish, loyihani rivojlantirish imkoniyatlari mavjud.
+                <a href="/pages/call.html">
+                    <div class="ios-list-item">
+                        <div class="flex items-center p-2">
+                            <span class="text-lg mr-4 ml-2">🌐</span>
+                            <div class="flex-grow">
+                                <div>Ijtimoiy tarmoqlar</div>
+                            </div>
+                            <svg class="ios-chevron w-4 h-4 text-gray-400" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
                         </div>
                     </div>
-                </div>
-
-                <div class="ios-list-item" onclick="toggleContent(this)">
-                    <div class="flex items-center p-2">
-                        <span class="text-lg mr-4 ml-2">🚀</span>
-                        <span class="flex-grow">Startap asoslanchilari</span>
-                        <svg class="ios-chevron w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </div>
-                    <div class="content-area">
-                        <div class="p-4 text-gray-600">
-                            Innovatsion g'oyalarni amalga oshirayotgan tadbirkorlar uchun. Platform orqali sarmoyadorlar
-                            va hamkorlar topish, loyihani rivojlantirish imkoniyatlari mavjud.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="ios-list-item" onclick="toggleContent(this)">
-                    <div class="flex items-center p-2">
-                        <span class="text-lg mr-4 ml-2">🚀</span>
-                        <span class="flex-grow">Startap asoslanchilari</span>
-                        <svg class="ios-chevron w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </div>
-                    <div class="content-area">
-                        <div class="p-4 text-gray-600">
-                            Innovatsion g'oyalarni amalga oshirayotgan tadbirkorlar uchun. Platform orqali sarmoyadorlar
-                            va hamkorlar topish, loyihani rivojlantirish imkoniyatlari mavjud.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Additional sections continued with same structure... -->
-            </div>
-        </div>
-
-        <!-- Features Section -->
-        <div class="ios-group">
-            <div class="ios-group-label text-gray-500 px-[16.5px]">IMKONIYATLAR</div>
-            <div class="ios-list shadow-sm">
-                <div class="ios-list-item" onclick="toggleContent(this)">
-                    <div class="flex items-center p-2">
-                        <span class="text-lg mr-4 ml-2">💰</span>
-                        <div class="flex-grow">
-                            <div>Monetizatsiya</div>
-                        </div>
-                        <svg class="ios-chevron w-4 h-4 text-gray-400" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </div>
-                    <div class="content-area">
-                        <div class="p-4 text-gray-600">
-                            <p class="mb-2">Monetizatsiya imkoniyatlari:</p>
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>To'g'ridan-to'g'ri obunalar</li>
-                                <li>Premium kontent sotish</li>
-                                <li>Hamkorlik dasturlari</li>
-                                <li>Reklama daromadlari</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="ios-list-item" onclick="toggleContent(this)">
-                    <div class="flex items-center p-2">
-                        <span class="text-lg mr-4 ml-2">💰</span>
-                        <div class="flex-grow">
-                            <div>Monetizatsiya</div>
-                        </div>
-                        <svg class="ios-chevron w-4 h-4 text-gray-400" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </div>
-                    <div class="content-area">
-                        <div class="p-4 text-gray-600">
-                            <p class="mb-2">Monetizatsiya imkoniyatlari:</p>
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>To'g'ridan-to'g'ri obunalar</li>
-                                <li>Premium kontent sotish</li>
-                                <li>Hamkorlik dasturlari</li>
-                                <li>Reklama daromadlari</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="ios-list-item" onclick="toggleContent(this)">
-                    <div class="flex items-center p-2">
-                        <span class="text-lg mr-4 ml-2">💰</span>
-                        <div class="flex-grow">
-                            <div>Monetizatsiya</div>
-                        </div>
-                        <svg class="ios-chevron w-4 h-4 text-gray-400" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </div>
-                    <div class="content-area">
-                        <div class="p-4 text-gray-600">
-                            <p class="mb-2">Monetizatsiya imkoniyatlari:</p>
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>To'g'ridan-to'g'ri obunalar</li>
-                                <li>Premium kontent sotish</li>
-                                <li>Hamkorlik dasturlari</li>
-                                <li>Reklama daromadlari</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="ios-list-item" onclick="toggleContent(this)">
-                    <div class="flex items-center p-2">
-                        <span class="text-lg mr-4 ml-2">💰</span>
-                        <div class="flex-grow">
-                            <div>Monetizatsiya</div>
-                        </div>
-                        <svg class="ios-chevron w-4 h-4 text-gray-400" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </div>
-                    <div class="content-area">
-                        <div class="p-4 text-gray-600">
-                            <p class="mb-2">Monetizatsiya imkoniyatlari:</p>
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>To'g'ridan-to'g'ri obunalar</li>
-                                <li>Premium kontent sotish</li>
-                                <li>Hamkorlik dasturlari</li>
-                                <li>Reklama daromadlari</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                </a>
 
                 <!-- More features items... -->
             </div>
 
             <div class="ios-group">
-                <div class="ios-group-label text-gray-500 px-[16.5px]">ALOQA</div>
-                <div class="ios-list shadow-sm">
-    
-                    <a href="/pages/call.html">
-                        <div class="ios-list-item">
-                            <div class="flex items-center p-2">
-                                <span class="text-lg mr-4 ml-2">📞</span>
-                                <div class="flex-grow">
-                                    <div>Bog'lanish</div>
-                                </div>
-                                <svg class="ios-chevron w-4 h-4 text-gray-400" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                                </svg>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="">
-                        <div class="ios-list-item">
-                            <div class="flex items-center p-2">
-                                <span class="text-lg mr-4 ml-2">✉️</span>
-                                <div class="flex-grow">
-                                    <div>Xabar yuborish</div>
-                                </div>
-                                <svg class="ios-chevron w-4 h-4 text-gray-400" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                                </svg>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="">
-                        <div class="ios-list-item">
-                            <div class="flex items-center p-2">
-                                <span class="text-lg mr-4 ml-2">💬</span>
-                                <div class="flex-grow">
-                                    <div>wedday chat</div>
-                                </div>
-                                <svg class="ios-chevron w-4 h-4 text-gray-400" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                                </svg>
-                            </div>
-                        </div>
-                    </a>
-
-                        
+                <div class="ios-list">                    
+                    <div class="flex items-center justify-center text-center p-[12px] text-[13px] text-gray-500">
+                        <div>&copy; 2025 Barcha huquqlar himoyalangan</div>
+                    </div>                        
                 </div>
-
-                <div class="ios-group">
-                    <div class="ios-list">                    
-                        <div class="flex items-center justify-center text-center p-[12px] text-[13px] text-gray-500">
-                            <div>&copy; 2025 Barcha huquqlar himoyalangan</div>
-                        </div>                        
-                    </div>
-                </div>
+            </div>
         </div>
     </div>
 

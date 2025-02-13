@@ -224,28 +224,3 @@ body::-webkit-scrollbar {
 
 
 
-
-.apple-button {
-    background: #0071e3;
-    border-radius: 980px;
-    padding: 8px 16px;
-    transition: all 0.3s;
-}
-.apple-button:hover {
-    background: #0077ED;
-}
-.faq-section {
-    background: #fbfbfd;
-}
-.contact-input {
-    font-size: 17px;
-    line-height: 1.23536;
-    border-radius: 12px;
-}
-.help-card {
-    border-radius: 18px;
-    transition: all 0.3s ease;
-}
-.help-card:hover {
-    transform: scale(1.02);
-}
