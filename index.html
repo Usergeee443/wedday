@@ -52,6 +52,55 @@
         .header-hidden {
             transform: translateY(-100%);
         }
+
+        
+
+        
+
+        .apple-loader {
+            width: 20px;
+            height: 20px;
+            display: none;
+            position: relative;
+        }
+
+        .apple-loader svg {
+            animation: rotateSpinner 1s steps(12, end) infinite;
+            transform-origin: center;
+        }
+
+        @keyframes rotateSpinner {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .spinner-segment {
+            opacity: 0;
+            animation: fadeSegment 1s steps(12, end) infinite;
+        }
+
+        @keyframes fadeSegment {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0.2;
+            }
+        }
+
+        .spinner-segment:nth-child(1) { animation-delay: -0.916s; }
+        .spinner-segment:nth-child(2) { animation-delay: -0.833s; }
+        .spinner-segment:nth-child(3) { animation-delay: -0.75s; }
+        .spinner-segment:nth-child(4) { animation-delay: -0.666s; }
+        .spinner-segment:nth-child(5) { animation-delay: -0.583s; }
+        .spinner-segment:nth-child(6) { animation-delay: -0.5s; }
+        .spinner-segment:nth-child(7) { animation-delay: -0.416s; }
+        .spinner-segment:nth-child(8) { animation-delay: -0.333s; }
+        .spinner-segment:nth-child(9) { animation-delay: -0.25s; }
+        .spinner-segment:nth-child(10) { animation-delay: -0.166s; }
+        .spinner-segment:nth-child(11) { animation-delay: -0.083s; }
+        .spinner-segment:nth-child(12) { animation-delay: 0s; }
     </style>
 </head>
 
@@ -78,7 +127,17 @@
 
     <div class="container mx-auto px-4 lg:px-0  pt-24">
         
-        <div class="bg-white rounded-[10px] shadow-sm py-[7rem]"></div>
+        <div class="w-full bg-white rounded-[10px] shadow-sm p-8">
+            <div class="flex flex-col items-center text-center">
+                <div class="w-24 h-24 flex items-center justify-center mb-1">
+                    <img class="" src="/img/IMG_5722.jpg" alt="">
+                </div>
+                <h1 class="text-[1.75rem] font-semibold mb-2">Wedday</h1>
+                <p class="text-gray-600 text-base leading-tight px-4">
+                    To‘y va bayram xizmatlarini tez va ishonchli topish, buyurtma qilish hamda biznesingizni rivojlantirish uchun platforma.
+                </p>
+            </div>
+        </div>
 
 
 
@@ -358,51 +417,98 @@
             <div class="ios-group-label text-gray-500 px-[16.5px]">YORDAM</div>
             <div class="ios-list shadow-sm">
 
-                <a href="/pages/call.html">
-                    <div class="ios-list-item ios-list-item-bottom">
+                <div class="ios-list-item ios-list-item-bottom">
+                    <a href="/pages/call.html" class="loading-link block">
                         <div class="flex items-center p-2">
                             <span class="text-lg mr-4 ml-2">📞</span>
                             <div class="flex-grow">
                                 <div>Bog'lanish</div>
                             </div>
-                            <svg class="ios-chevron w-4 h-4 text-gray-400" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            <svg class="chevron-icon w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                             </svg>
+                            <div class="apple-loader">
+                                <svg width="20" height="20" viewBox="0 0 20 20">
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(0, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(30, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(60, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(90, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(120, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(150, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(180, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(210, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(240, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(270, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(300, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(330, 10, 10)" />
+                                </svg>
+                            </div>
                         </div>
-                    </div>
-                </a>
-
-                <div class="ios-list-item ios-list-item-bottom" onclick="toggleContent(this)">
-                    <div class="flex items-center p-2">
-                        <span class="text-lg mr-4 ml-2">💡</span>
-                        <span class="flex-grow">Umumiy Tez-tez so‘raladigan savollar</span>
-                        <svg class="ios-chevron w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </div>
-                    <div class="content-area">
-                        <div class="p-4 text-gray-600">
-                            Tez kunda...
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
-                <a href="/pages/call.html">
-                    <div class="ios-list-item">
+                <div class="ios-list-item ios-list-item-bottom">
+                    <a href="/pages/faqs.html" class="loading-link block">
+                        <div class="flex items-center p-2">
+                            <span class="text-lg mr-4 ml-2">💡</span>
+                            <div class="flex-grow">
+                                <div>Umumiy Tez-tez so‘raladigan savollar</div>
+                            </div>
+                            <svg class="chevron-icon w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                            <div class="apple-loader">
+                                <svg width="20" height="20" viewBox="0 0 20 20">
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(0, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(30, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(60, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(90, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(120, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(150, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(180, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(210, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(240, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(270, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(300, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(330, 10, 10)" />
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="ios-list-item">
+                    <a href="/pages/social.html" class="loading-link block">
                         <div class="flex items-center p-2">
                             <span class="text-lg mr-4 ml-2">🌐</span>
                             <div class="flex-grow">
                                 <div>Ijtimoiy tarmoqlar</div>
                             </div>
-                            <svg class="ios-chevron w-4 h-4 text-gray-400" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            <svg class="chevron-icon w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                             </svg>
+                            <div class="apple-loader">
+                                <svg width="20" height="20" viewBox="0 0 20 20">
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(0, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(30, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(60, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(90, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(120, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(150, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(180, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(210, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(240, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(270, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(300, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(330, 10, 10)" />
+                                </svg>
+                            </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
+
+            
 
                 <!-- More features items... -->
             </div>
@@ -437,6 +543,28 @@
         }
         
         lastScroll = currentScroll;
+    });
+
+
+
+    // Select all elements with loading-link class
+    document.querySelectorAll('.loading-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Find the chevron and loader within this specific link
+            const chevron = this.querySelector('.chevron-icon');
+            const loader = this.querySelector('.apple-loader');
+            
+            // Hide chevron and show loader for this link only
+            chevron.style.display = 'none';
+            loader.style.display = 'block';
+            
+            // Navigate after animation
+            setTimeout(() => {
+                window.location.href = this.getAttribute('href');
+            }, 500);
+        });
     });
 </script>
 
