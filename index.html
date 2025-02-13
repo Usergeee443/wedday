@@ -52,16 +52,6 @@
         .header-hidden {
             transform: translateY(-100%);
         }
-
-        .ios-list-item::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 50px; /* Apple uslubida chap tomonda bo‘sh joy qoldirish */
-            width: calc(100% - 22px); /* Eni: chap va o‘ngdan bo‘sh joy qoldirish */
-            height: 0.1px;
-            background: rgba(0, 0, 0, 0.15); /* Apple’dagi chiziq ohangida */
-        }
     </style>
 </head>
 
@@ -96,7 +86,7 @@
         <div class="ios-group">
             <div class="ios-group-label text-gray-500 px-[16.5px]">WEDDAY</div>
             <div class="ios-list shadow-sm">
-                <div class="ios-list-item" onclick="toggleContent(this)">
+                <div class="ios-list-item ios-list-item-bottom" onclick="toggleContent(this)">
                     <div class="flex items-center p-2">
                         <span class="text-lg mr-4 ml-2">💫</span>
                         <span class="flex-grow">Qisqa tanishuv</span>
@@ -112,7 +102,7 @@
                     </div>
                 </div>
 
-                <div class="ios-list-item" onclick="toggleContent(this)">
+                <div class="ios-list-item ios-list-item-bottom" onclick="toggleContent(this)">
                     <div class="flex items-center p-2">
                         <span class="text-lg mr-4 ml-2">🏆</span>
                         <span class="flex-grow">Ilovaning afzalliklari</span>
@@ -154,7 +144,7 @@
         <div class="ios-group">
             <div class="ios-group-label text-gray-500 px-[16.5px]">FOYDALANUVCHILAR UCHUN</div>
             <div class="ios-list shadow-sm">
-                <div class="ios-list-item" onclick="toggleContent(this)">
+                <div class="ios-list-item ios-list-item-bottom" onclick="toggleContent(this)">
                     <div class="flex items-center p-2">
                         <span class="text-lg mr-4 ml-2">⚡</span>
                         <span class="flex-grow">Qanday ishlaydi ?</span>
@@ -196,7 +186,7 @@
         <div class="ios-group">
             <div class="ios-group-label text-gray-500 px-[16.5px]">Xizmat ko‘rsatuvchilar uchun</div>
             <div class="ios-list shadow-sm">
-                <div class="ios-list-item" onclick="toggleContent(this)">
+                <div class="ios-list-item ios-list-item-bottom" onclick="toggleContent(this)">
                     <div class="flex items-center p-2">
                         <span class="text-lg mr-4 ml-2">📋</span>
                         <span class="flex-grow">Xizmat qo‘shish tartibi</span>
@@ -212,7 +202,7 @@
                     </div>
                 </div>
 
-                <div class="ios-list-item" onclick="toggleContent(this)">
+                <div class="ios-list-item ios-list-item-bottom" onclick="toggleContent(this)">
                     <div class="flex items-center p-2">
                         <span class="text-lg mr-4 ml-2">💎</span>
                         <span class="flex-grow">Premium imkoniyatlar</span>
@@ -228,7 +218,7 @@
                     </div>
                 </div>
 
-                <div class="ios-list-item" onclick="toggleContent(this)">
+                <div class="ios-list-item ios-list-item-bottom" onclick="toggleContent(this)">
                     <div class="flex items-center p-2">
                         <span class="text-lg mr-4 ml-2">🔥</span>
                         <span class="flex-grow">Reklama</span>
@@ -269,7 +259,7 @@
         <div class="ios-group">
             <div class="ios-group-label text-gray-500 px-[16.5px]">BLOG VA YANGILIKLAR</div>
             <div class="ios-list shadow-sm">
-                <div class="ios-list-item" onclick="toggleContent(this)">
+                <div class="ios-list-item ios-list-item-bottom" onclick="toggleContent(this)">
                     <div class="flex items-center p-2">
                         <span class="text-lg mr-4 ml-2">💍</span>
                         <span class="flex-grow">To‘y va tadbirlar bo‘yicha maslahatlar</span>
@@ -285,7 +275,7 @@
                     </div>
                 </div>
 
-                <div class="ios-list-item" onclick="toggleContent(this)">
+                <div class="ios-list-item ios-list-item-bottom" onclick="toggleContent(this)">
                     <div class="flex items-center p-2">
                         <span class="text-lg mr-4 ml-2">🆕</span>
                         <span class="flex-grow">Ilova yangiliklari</span>
@@ -326,7 +316,7 @@
         <div class="ios-group">
             <div class="ios-group-label text-gray-500 px-[16.5px]">HUQUQIY</div>
             <div class="ios-list shadow-sm">
-                <div class="ios-list-item" onclick="toggleContent(this)">
+                <div class="ios-list-item ios-list-item-bottom" onclick="toggleContent(this)">
                     <div class="flex items-center p-2">
                         <span class="text-lg mr-4 ml-2">📄</span>
                         <span class="flex-grow">Foydalanish shartlari</span>
@@ -369,7 +359,7 @@
             <div class="ios-list shadow-sm">
 
                 <a href="/pages/call.html">
-                    <div class="ios-list-item">
+                    <div class="ios-list-item ios-list-item-bottom">
                         <div class="flex items-center p-2">
                             <span class="text-lg mr-4 ml-2">📞</span>
                             <div class="flex-grow">
@@ -383,7 +373,7 @@
                     </div>
                 </a>
 
-                <div class="ios-list-item" onclick="toggleContent(this)">
+                <div class="ios-list-item ios-list-item-bottom" onclick="toggleContent(this)">
                     <div class="flex items-center p-2">
                         <span class="text-lg mr-4 ml-2">💡</span>
                         <span class="flex-grow">Umumiy Tez-tez so‘raladigan savollar</span>
@@ -420,7 +410,7 @@
             <div class="ios-group">
                 <div class="ios-list">                    
                     <div class="flex items-center justify-center text-center p-[12px] text-[13px] text-gray-500">
-                        <div>&copy; 2025 Barcha huquqlar himoyalangan 3</div>
+                        <div>&copy; 2025 Barcha huquqlar himoyalangan 4</div>
                     </div>                        
                 </div>
             </div>
