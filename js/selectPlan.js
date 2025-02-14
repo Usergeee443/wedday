@@ -1,5 +1,3 @@
-
-
 function selectPlan(plan) {
     // Reset radio buttons
     document.querySelectorAll('[id$="-radio"] div').forEach(el => {

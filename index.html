@@ -8,100 +8,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/jpg" href="/img/Photoroom_20250212_173754.PNG">
     <link rel="stylesheet" href="/css/main.css">
-
-    <style>
-        .main-logo {
-            position: absolute;
-            top: 2rem;
-            left: 2rem;
-            opacity: 1;
-            transition: opacity 0.3s ease;
-        }
-        
-        .main-logo.scrolled {
-            opacity: 0;
-        }
-        
-        .header-nav {
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            
-        }
-        
-        .header-nav.visible {
-            opacity: 1;
-            border-bottom: 0.1px solid rgba(0, 0, 0, 0.171);
-
-        }
-        
-        .header-logo {
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .header-nav.visible .header-logo {
-            opacity: 1;
-        }
-
-        /* Hide header initially */
-        .header-hidden {
-            transform: translateY(-100%);
-        }
-
-        
-
-        
-
-        .apple-loader {
-            width: 20px;
-            height: 20px;
-            display: none;
-            position: relative;
-        }
-
-        .apple-loader svg {
-            animation: rotateSpinner 1s steps(12, end) infinite;
-            transform-origin: center;
-        }
-
-        @keyframes rotateSpinner {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        .spinner-segment {
-            opacity: 0;
-            animation: fadeSegment 1s steps(12, end) infinite;
-        }
-
-        @keyframes fadeSegment {
-            from {
-                opacity: 1;
-            }
-            to {
-                opacity: 0.2;
-            }
-        }
-
-        .spinner-segment:nth-child(1) { animation-delay: -0.916s; }
-        .spinner-segment:nth-child(2) { animation-delay: -0.833s; }
-        .spinner-segment:nth-child(3) { animation-delay: -0.75s; }
-        .spinner-segment:nth-child(4) { animation-delay: -0.666s; }
-        .spinner-segment:nth-child(5) { animation-delay: -0.583s; }
-        .spinner-segment:nth-child(6) { animation-delay: -0.5s; }
-        .spinner-segment:nth-child(7) { animation-delay: -0.416s; }
-        .spinner-segment:nth-child(8) { animation-delay: -0.333s; }
-        .spinner-segment:nth-child(9) { animation-delay: -0.25s; }
-        .spinner-segment:nth-child(10) { animation-delay: -0.166s; }
-        .spinner-segment:nth-child(11) { animation-delay: -0.083s; }
-        .spinner-segment:nth-child(12) { animation-delay: 0s; }
-    </style>
 </head>
 
 
@@ -145,20 +51,35 @@
         <div class="ios-group">
             <div class="ios-group-label text-gray-500 px-[16.5px]">WEDDAY</div>
             <div class="ios-list shadow-sm">
-                <div class="ios-list-item ios-list-item-bottom" onclick="toggleContent(this)">
-                    <div class="flex items-center p-2">
-                        <span class="text-lg mr-4 ml-2">💫</span>
-                        <span class="flex-grow">Qisqa tanishuv</span>
-                        <svg class="ios-chevron w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </div>
-                    <div class="content-area">
-                        <div class="p-4 text-gray-600">
-                            Tez kunda...
+
+                <div class="ios-list-item ios-list-item-bottom">
+                    <a href="/pages/acquaintance.html" class="loading-link block">
+                        <div class="flex items-center p-2">
+                            <span class="text-lg mr-4 ml-2">💫</span>
+                            <div class="flex-grow">
+                                <div>Qisqa tanishuv</div>
+                            </div>
+                            <svg class="chevron-icon w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                            <div class="apple-loader">
+                                <svg width="20" height="20" viewBox="0 0 20 20">
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(0, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(30, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(60, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(90, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(120, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(150, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(180, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(210, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(240, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(270, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(300, 10, 10)" />
+                                    <line class="spinner-segment" x1="10" y1="3" x2="10" y2="7" stroke="#8E8E93" stroke-width="2" stroke-linecap="round" transform="rotate(330, 10, 10)" />
+                                </svg>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="ios-list-item ios-list-item-bottom" onclick="toggleContent(this)">
@@ -523,53 +444,7 @@
         </div>
     </div>
 
-
-</body>
-<script>
-    const mainLogo = document.querySelector('.main-logo');
-    const header = document.querySelector('.header-nav');
-    let lastScroll = 0;
-    
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.scrollY;
-        const threshold = 20;
-        
-        if (currentScroll > threshold) {
-            mainLogo.classList.add('scrolled');
-            header.classList.add('visible');
-        } else {
-            mainLogo.classList.remove('scrolled');
-            header.classList.remove('visible');
-        }
-        
-        lastScroll = currentScroll;
-    });
-
-
-
-    // Select all elements with loading-link class
-    document.querySelectorAll('.loading-link').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Find the chevron and loader within this specific link
-            const chevron = this.querySelector('.chevron-icon');
-            const loader = this.querySelector('.apple-loader');
-            
-            // Hide chevron and show loader for this link only
-            chevron.style.display = 'none';
-            loader.style.display = 'block';
-            
-            // Navigate after animation
-            setTimeout(() => {
-                window.location.href = this.getAttribute('href');
-            }, 500);
-        });
-    });
-</script>
-
-
-    <script src="/js/about.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 
 </html>

@@ -1,4 +1,3 @@
-
 document.querySelectorAll('.faq-btn').forEach(button => {
     button.addEventListener('click', () => {
         const answer = button.nextElementSibling;

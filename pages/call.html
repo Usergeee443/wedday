@@ -9,101 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css" rel="stylesheet">
-    <link rel="icon" type="image/jpg" href="/img/Photoroom_20250212_173754.PNG">
-
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
-
     <link rel="stylesheet" href="/css/main.css">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <style>
-        body {
-            background-color: #F2F2F7;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .back-header {
-            backdrop-filter: blur(0);
-            -webkit-backdrop-filter: blur(0);
-            transition: all 0.3s ease;
-            height: 48px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .back-header.scrolled {
-            background: rgba(242, 242, 247, 0.85);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
-        }
-        
-        .back-button {
-            color: #007AFF;
-            display: flex;
-            align-items: center;
-            font-size: 17px;
-            text-decoration: none;
-            width: fit-content;
-            font-weight: 400;
-            margin-top: -2px;
-            -webkit-tap-highlight-color: transparent;
-        }
-        
-        .back-arrow {
-            display: inline-block;
-            width: 7px;
-            height: 7px;
-            border-left: 2px solid #007AFF;
-            border-bottom: 2px solid #007AFF;
-            transform: rotate(45deg);
-            margin-right: 5px;
-            position: relative;
-            left: -2px;
-            top: -0.5px;
-        }
-
-        .page-title {
-            font-size: 41px;
-            line-height: 1.1;
-            font-weight: 700;
-            letter-spacing: -0.01em;
-            color: #000;
-            margin-bottom: 12px;
-        }
-
-        .page-subtitle {
-            font-size: 18px;
-            line-height: 1.2;
-            font-weight: 400;
-            letter-spacing: 0.004em;
-            color: #1D1D1F;
-        }
-
-        .back-arrow {
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            border-left: 2px solid #007AFF;
-            border-bottom: 2px solid #007AFF;
-            transform: rotate(45deg);
-            margin-right: 2px;
-        }
-
-      
-    </style>
 </head>
 
 
@@ -256,25 +162,7 @@
 
     </div>
 
-
-</body>
-<script>
-    const header = document.querySelector('.back-header');
-        
-        window.addEventListener('scroll', () => {
-            const scrollPosition = window.scrollY;
-            
-            if (scrollPosition > 10) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-</script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-
-    <script src="/js/about.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 
 </html>
