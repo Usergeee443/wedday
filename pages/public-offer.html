@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeddAy - Ommaviy Oferta</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#FFAE66',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fadeUp {
+            opacity: 0;
+            animation: fadeUp 0.8s forwards;
+        }
+        
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s ease-out;
+        }
+        
+        .revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-sans">
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-black/80 backdrop-blur-sm py-4 border-b border-white/10">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold">
+                Wedd<span class="text-accent">Ay</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="/#afzalliklar" class="hover:text-accent transition-colors duration-300">Afzalliklar</a>
+                <a href="/#yuklash" class="hover:text-accent transition-colors duration-300">Yuklash</a>
+                <a href="/pages/help.html" class="hover:text-accent transition-colors duration-300">Yordam</a>
+            </div>
+            <a href="/#yuklash" class="bg-white text-black py-2 px-5 rounded-full text-sm font-medium hover:bg-accent transition-all duration-300 transform hover:scale-105">Boshlash</a>
+        </div>
+    </header>
+
+    <!-- Asosiy kontent -->
+    <section class="pt-32 pb-16 relative overflow-hidden">
+        <div class="absolute w-full h-full">
+            <div class="absolute top-20 left-10 w-64 h-64 bg-accent/20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 z-10 relative">
+            <div class="text-center max-w-3xl mx-auto animate-fadeUp">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Ommaviy <span class="text-accent">Oferta</span></h1>
+                <p class="text-white/70 text-lg mb-10">
+                    WeddAy ilovasidan foydalanish shartlari va qoidalari
+                </p>
+            </div>
+            
+            <!-- Oferta matni -->
+            <div class="max-w-4xl mx-auto text-white/80 space-y-6 reveal-on-scroll">
+                <p>
+                    Ushbu Ommaviy Oferta (keyingi o'rinlarda "Shartnoma") WeddAy ilovasidan foydalanish shartlarini belgilaydi. Ilovadan foydalanish orqali siz ushbu Shartnomaning barcha shartlariga rozilik bildirasiz.
+                </p>
+                <h2 class="text-2xl font-bold text-white">1. Umumiy shartlar</h2>
+                <p>
+                    WeddAy ilovasi (keyingi o'rinlarda "Ilova") to'y rejalashtirish jarayonini osonlashtirish maqsadida yaratilgan. Ilova orqali siz to'y jadvalini tuzishingiz, mehmonlarni boshqarishingiz, byudjetni nazorat qilishingiz va boshqa ko'plab vazifalarni bajarishingiz mumkin.
+                </p>
+                <h2 class="text-2xl font-bold text-white">2. Foydalanish huquqlari</h2>
+                <p>
+                    Ilovadan foydalanish uchun siz ro'yxatdan o'tishingiz kerak. Ro'yxatdan o'tish jarayonida siz to'g'ri va to'liq ma'lumotlarni kiritishingiz shart. Noto'g'ri ma'lumotlar kiritilgan taqdirda, hisobingiz bloklanishi mumkin.
+                </p>
+                <h2 class="text-2xl font-bold text-white">3. To'lovlar</h2>
+                <p>
+                    Ilovaning asosiy funksiyalari bepul taqdim etiladi. Premium funksiyalardan foydalanish uchun oylik yoki bir martalik to'lov talab qilinadi. To'lovlar Visa, Mastercard, Payme, Click va UZCARD orqali amalga oshirilishi mumkin.
+                </p>
+                <h2 class="text-2xl font-bold text-white">4. Javobgarlik</h2>
+                <p>
+                    Ilova ma'muriyati foydalanuvchilar tomonidan kiritilgan ma'lumotlarning to'g'riligini kafolatlamaydi. Shuningdek, ilova ishlashida muammolar yuzaga kelgan taqdirda, ma'muriyat javobgar emas.
+                </p>
+                <h2 class="text-2xl font-bold text-white">5. Shartnomani o'zgartirish</h2>
+                <p>
+                    WeddAy ilovasi ushbu Shartnomani istalgan vaqtda o'zgartirish huquqini o'zida saqlaydi. O'zgartirishlar ilova orqali e'lon qilinadi va foydalanuvchilar uchun majburiy hisoblanadi.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skript -->
+    <script>
+        // Scroll animatsiyalari
+        const revealElements = document.querySelectorAll('.reveal-on-scroll');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
