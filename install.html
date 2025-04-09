@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeddAy - Ilovani yuklab olish</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#FFAE66',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeUp {
+            opacity: 0;
+            animation: fadeUp 0.8s forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+
+        .app-buttons-container * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .app-buttons-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            padding: 48px;
+            max-width: 800px;
+            margin: 0 auto;
+            isolation: isolate;
+        }
+
+        @media (min-width: 640px) {
+            .app-buttons-container {
+                flex-direction: row;
+                gap: 48px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 1200px;
+                padding: 0 2rem;
+            }
+
+            .app-buttons-container {
+                max-width: 1000px;
+                padding: 64px;
+            }
+
+            .app-store-button-image {
+                width: 200px;
+            }
+
+            .google-play-button-image {
+                width: 220px;
+            }
+        }
+
+        .app-button-wrapper {
+            transition: transform 0.3s;
+        }
+
+        .app-button-wrapper:hover {
+            transform: translateY(-4px);
+        }
+
+        .app-download-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;           
+            transition: all 0.3s;
+            z-index: 10;
+            position: relative;
+        }
+
+        .app-store-button-image {
+            width: 180px;
+            height: auto;
+        }
+
+        .google-play-button-image {
+            width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white font-sans min-h-screen flex items-center justify-center">
+    <div class="absolute w-full h-full">
+        <div class="absolute top-20 left-10 w-64 h-64 bg-accent/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-10 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-6 z-10">
+        <div class="max-w-3xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 animate-fadeUp delay-1">
+                <span class="text-accent">WEDDAY</span> ilovasini yuklab oling!
+            </h1>
+
+            <div class="app-buttons-container animate-fadeUp delay-3">
+                <!-- App Store Button -->
+                <div class="app-button-wrapper">
+                    <a href="#app-store" class="app-download-button">
+                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                            alt="App Store" class="app-store-button-image">
+                    </a>
+                </div>
+
+                <!-- Google Play Button -->
+                <div class="app-button-wrapper">
+                    <a href="#google-play" class="app-download-button">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                            alt="Google Play" class="google-play-button-image">
+                    </a>
+                </div>
+            </div>
+
+            <p class="text-[10px] text-white/70 animate-fadeUp delay-2">
+                To'y va bayram xizmatlarini qidirish va e'lon berish uchun zamonaviy platforma
+            </p>
+
+            <div class="flex items-center justify-center gap-4 mt-4 animate-fadeUp delay-3">
+                <div class="flex items-center">
+                    <div class="flex mr-2">
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                    </div>
+                    <span class="text-white/60 text-sm">10,000+ sharhlar</span>
+                </div>
+                <div class="h-4 w-px bg-white/20"></div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-download text-accent"></i>
+                    <span class="text-white/60 text-sm">1M+ yuklab olishlar</span>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-center gap-4 mt-4 animate-fadeUp delay-3">
+                <a href="https://wedday.uz" target="_blank">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-globe text-accent"></i>
+                        <span class="text-white/60 text-sm">wedday.uz</span>
+                    </div>
+                </a>
+                <div class="h-4 w-px bg-white/20"></div>
+                <a href="https://wedday.uz/about" target="_blank">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-info-circle text-accent"></i>
+                        <span class="text-white/60 text-sm">wedday.uz/about</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>     
